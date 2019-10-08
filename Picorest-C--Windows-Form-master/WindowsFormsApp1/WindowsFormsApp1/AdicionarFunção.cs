@@ -51,5 +51,15 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void AdicionarFunção_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

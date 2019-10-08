@@ -91,5 +91,11 @@ namespace WindowsFormsApp1
             AdicionarFuncionario insert = new AdicionarFuncionario();
             insert.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Cursos cursos = new Cursos();
+            cursos.Show();
+        }
     }
 }
