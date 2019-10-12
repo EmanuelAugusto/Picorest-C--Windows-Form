@@ -1,0 +1,130 @@
+C:\Users\fr042028\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\fr042028\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\fr042028\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\fr042028\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\fr042028\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\fr042028\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\fr042028\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\fr042028\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\fr042028\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\fr041725\Downloads\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\fr041725\Downloads\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\fr041725\Downloads\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\fr041725\Downloads\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\fr041725\Downloads\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\fr041725\Downloads\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\fr041725\Downloads\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\fr041725\Downloads\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\fr041725\Downloads\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\fr041725\Downloads\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\fr041725\Downloads\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\fr041725\Downloads\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\fr041725\Downloads\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\fr041725\Downloads\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.exe.config
+C:\Users\fr041725\Downloads\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.exe
+C:\Users\fr041725\Downloads\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.pdb
+C:\Users\fr041725\Downloads\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+C:\Users\fr041725\Downloads\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Picorest - Contatos.exe
+C:\Users\fr041725\Downloads\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Picorest - Contatos.pdb
+C:\Users\emanu\Pictures\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.exe.config
+C:\Users\emanu\Pictures\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.exe
+C:\Users\emanu\Pictures\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.pdb
+C:\Users\emanu\Pictures\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\emanu\Pictures\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\emanu\Pictures\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+C:\Users\emanu\Pictures\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\emanu\Pictures\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\emanu\Pictures\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Picorest - Contatos.exe
+C:\Users\emanu\Pictures\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Picorest - Contatos.pdb
+C:\Users\emanu\Pictures\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarFuncionario.resources
+C:\Users\emanu\Pictures\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Login.resources
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.exe.config
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.exe
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.pdb
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarFuncionario.resources
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Login.resources
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Picorest - Contatos.exe
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Picorest - Contatos.pdb
+C:\Users\fr041725\Downloads\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarFuncionario.resources
+C:\Users\fr041725\Downloads\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarFunção.resources
+C:\Users\fr041725\Downloads\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Login.resources
+C:\Users\fr041725\Downloads\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Setor.resources
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.exe.config
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.exe
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.pdb
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarFuncionario.resources
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarFunção.resources
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Cursos.resources
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Login.resources
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Setor.resources
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Picorest - Contatos.exe
+C:\Users\fr041969\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Picorest - Contatos.pdb
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.exe.config
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.exe
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.pdb
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarFuncionario.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarFunção.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Cursos.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Login.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Setor.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Picorest - Contatos.exe
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Picorest - Contatos.pdb
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.exe.config
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.exe
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.pdb
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarFuncionario.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarFunção.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Contatos.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Login.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Picorest - Contatos.exe
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Picorest - Contatos.pdb
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Atualizacao.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.alterarPerfil.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.esqueciSenhaInto.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.comentarioSistema.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarCursos.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarSetor.resources
+C:\Users\fr041725\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Sobre.resources
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.exe.config
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.exe
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.pdb
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarFuncionario.resources
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarFunção.resources
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.alterarPerfil.resources
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Atualizacao.resources
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.comentarioSistema.resources
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Contatos.resources
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarCursos.resources
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.esqueciSenhaInto.resources
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Login.resources
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarSetor.resources
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Sobre.resources
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Picorest - Contatos.exe
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Picorest - Contatos.pdb
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Ajuda.resources
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AcessibilidadeDoTeclado.resources
