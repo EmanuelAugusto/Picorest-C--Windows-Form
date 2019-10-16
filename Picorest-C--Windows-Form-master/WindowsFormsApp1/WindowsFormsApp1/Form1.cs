@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
+using WindowsFormsApp1.Class;
 
 namespace WindowsFormsApp1
 {
@@ -82,7 +86,7 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            GetAllFuncionarios();
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -159,6 +163,37 @@ namespace WindowsFormsApp1
         {
             AcessibilidadeDoTeclado acessibilidadeDoTeclado = new AcessibilidadeDoTeclado();
             acessibilidadeDoTeclado.Show();
+        }
+
+        private async void GetAllFuncionarios()
+        {
+            string URL = "http://localhost:8081/loadEmployees";
+
+            using ( var client = new HttpClient())
+            {
+                using (var response = await client.GetAsync(URL))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var FuncionarioJsonString = await response.Content.ReadAsStringAsync();
+                        dataGridView1.DataSource = JsonConvert.DeserializeObject<FuncionarioClass[]>(FuncionarioJsonString).ToList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não foi possivel conectar a base de dados" + response.StatusCode);
+                    }
+                }
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            GetAllFuncionarios();
         }
     }
 }
