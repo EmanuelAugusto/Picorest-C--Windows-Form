@@ -12,4 +12,10 @@ namespace WindowsFormsApp1.Class
         public string Nome { get; set; }
         public string funcao { get; set; }
     }
+
+    class AlterarSenhaClass
+    {
+        public int cpf { get; set; }
+        public string senha { get; set; }
+    }
 }

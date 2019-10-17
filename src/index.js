@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const handlebars = require('express-handlebars');
 const Post = require('./models/Post')
+const Senha = require('./models/SenhaTeste')
 
 app.engine('handlebars', handlebars({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars');
@@ -41,6 +42,17 @@ app.post('/insertEmployees', function(req, res){
 	Post.create({
 		nome: req.body.nome,
 		funcao: req.body.funcao
+	}).then(function(){
+		res.send("post criado com sucesso");
+	}).catch(function(erro){
+		res.send("Houve um erro  " + erro);
+	})
+});
+
+app.post('/insertSenha', function(req, res){
+	Senha.create({
+		cpf: req.body.nome,
+		senha: req.body.funcao
 	}).then(function(){
 		res.send("post criado com sucesso");
 	}).catch(function(erro){

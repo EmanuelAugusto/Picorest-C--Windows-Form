@@ -6,16 +6,16 @@ const sequelize = new Sequelize('picorest', 'root', '', {
 });
 
 
-const Postagem = sequelize.define('funcionarios', {
-	nome: {
+const senha = sequelize.define('senha', {
+	cpf: {
 		type: Sequelize.STRING
 	},
 
-	funcao: {
+	senha: {
 		type: Sequelize.TEXT
 	}
 });
 
-module.exports = Postagem
+module.exports = senha
 
-Postagem.sync({force: true})
+//senha.sync({force: true})
