@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('picorest', 'root', '', {
-	host: 'localhost',
+const sequelize = new Sequelize('restaurante', '', '', {
+	host: 'https://demo.phpmyadmin.net/master-config/',
 	dialect: 'mysql'
 });
 
