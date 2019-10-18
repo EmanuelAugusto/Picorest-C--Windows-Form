@@ -51,8 +51,8 @@ app.post('/insertEmployees', function(req, res){
 
 app.post('/insertSenha', function(req, res){
 	Senha.create({
-		cpf: req.body.nome,
-		senha: req.body.funcao
+		cpf: req.body.cpf,
+		senha: req.body.senha
 	}).then(function(){
 		res.send("post criado com sucesso");
 	}).catch(function(erro){
@@ -68,6 +68,14 @@ res.send('este funcionário não existe');
 });
 });
 
+let array = []
+
+app.post("/test", (req,res)=>{
+
+	array.push(req.body)
+	console.log(array)
+	res.sendStatus(200)
+})
 app.listen(8081, function(){
     console.log('localhost:8081');
 });
