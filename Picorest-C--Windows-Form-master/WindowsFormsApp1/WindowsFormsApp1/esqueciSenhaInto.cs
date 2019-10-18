@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Class;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
 
 namespace WindowsFormsApp1
 {
@@ -25,7 +28,7 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            alterarSenha();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -46,6 +49,29 @@ namespace WindowsFormsApp1
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private async void alterarSenha()
+        {
+            string URL = "http://localhost:8081/insertSenha";
+            int cpfForm = int.Parse(textBox1.Text);
+            string senhaForm = textBox4.Text;
+
+            AlterarSenha alterPassword = new AlterarSenha();
+            alterPassword.cpf = cpfForm;
+            alterPassword.senha = senhaForm;
+
+            MessageBox.Show("a senha é  " + alterPassword.cpf );
+
+            using (var client = new HttpClient())
+            {
+                var serializedNovaSenha = JsonConvert.SerializeObject(alterPassword);
+                var content = new StringContent(serializedNovaSenha, Encoding.UTF8, "application/json");
+                var result = await client.PostAsync(URL, content);
+                MessageBox.Show("Retorno " + result);
+            }
+
+            
         }
     }
 }
