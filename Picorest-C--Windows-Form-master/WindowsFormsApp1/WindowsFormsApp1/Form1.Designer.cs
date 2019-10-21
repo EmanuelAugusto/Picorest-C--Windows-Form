@@ -32,7 +32,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configuraçõesDaContaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +55,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -67,15 +68,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button7 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -97,7 +95,6 @@
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.contatosToolStripMenuItem,
-            this.configuraçõesDaContaToolStripMenuItem,
             this.adicionarToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
@@ -107,16 +104,10 @@
             // contatosToolStripMenuItem
             // 
             this.contatosToolStripMenuItem.Name = "contatosToolStripMenuItem";
-            this.contatosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.contatosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.contatosToolStripMenuItem.Tag = "contato";
             this.contatosToolStripMenuItem.Text = "Contatos";
             this.contatosToolStripMenuItem.Click += new System.EventHandler(this.contatosToolStripMenuItem_Click);
-            // 
-            // configuraçõesDaContaToolStripMenuItem
-            // 
-            this.configuraçõesDaContaToolStripMenuItem.Name = "configuraçõesDaContaToolStripMenuItem";
-            this.configuraçõesDaContaToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.configuraçõesDaContaToolStripMenuItem.Text = "Configurações da conta";
             // 
             // adicionarToolStripMenuItem
             // 
@@ -126,42 +117,42 @@
             this.funçõesToolStripMenuItem,
             this.cursosToolStripMenuItem});
             this.adicionarToolStripMenuItem.Name = "adicionarToolStripMenuItem";
-            this.adicionarToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.adicionarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.adicionarToolStripMenuItem.Text = "Adicionar";
             this.adicionarToolStripMenuItem.Click += new System.EventHandler(this.adicionarToolStripMenuItem_Click);
             // 
             // funcionárioToolStripMenuItem
             // 
             this.funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            this.funcionárioToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.funcionárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.funcionárioToolStripMenuItem.Text = "Funcionário";
             this.funcionárioToolStripMenuItem.Click += new System.EventHandler(this.funcionárioToolStripMenuItem_Click);
             // 
             // setorToolStripMenuItem
             // 
             this.setorToolStripMenuItem.Name = "setorToolStripMenuItem";
-            this.setorToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.setorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.setorToolStripMenuItem.Text = "Setor";
             this.setorToolStripMenuItem.Click += new System.EventHandler(this.setorToolStripMenuItem_Click);
             // 
             // funçõesToolStripMenuItem
             // 
             this.funçõesToolStripMenuItem.Name = "funçõesToolStripMenuItem";
-            this.funçõesToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.funçõesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.funçõesToolStripMenuItem.Text = "Função";
             this.funçõesToolStripMenuItem.Click += new System.EventHandler(this.funçõesToolStripMenuItem_Click);
             // 
             // cursosToolStripMenuItem
             // 
             this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
-            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cursosToolStripMenuItem.Text = "Curso";
             this.cursosToolStripMenuItem.Click += new System.EventHandler(this.cursosToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -177,7 +168,7 @@
             // atualizaçõesToolStripMenuItem
             // 
             this.atualizaçõesToolStripMenuItem.Name = "atualizaçõesToolStripMenuItem";
-            this.atualizaçõesToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.atualizaçõesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.atualizaçõesToolStripMenuItem.Text = "Atualizações";
             this.atualizaçõesToolStripMenuItem.Click += new System.EventHandler(this.atualizaçõesToolStripMenuItem_Click);
             // 
@@ -187,7 +178,7 @@
             this.mudarSenhaToolStripMenuItem,
             this.esqueciMinhaSenhaToolStripMenuItem});
             this.cToolStripMenuItem.Name = "cToolStripMenuItem";
-            this.cToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.cToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cToolStripMenuItem.Text = "Opções de Usuário";
             this.cToolStripMenuItem.Click += new System.EventHandler(this.cToolStripMenuItem_Click);
             // 
@@ -328,11 +319,31 @@
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.vScrollBar1);
             this.panel2.Location = new System.Drawing.Point(237, 61);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1095, 620);
             this.panel2.TabIndex = 2;
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button7.Location = new System.Drawing.Point(21, 150);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(36, 32);
+            this.button7.TabIndex = 13;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(21, 187);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1054, 388);
+            this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button6
             // 
@@ -456,39 +467,11 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Nome:";
             // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(1078, 149);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 470);
-            this.vScrollBar1.TabIndex = 13;
-            // 
             // directorySearcher1
             // 
             this.directorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
             this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
             this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 187);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1054, 388);
-            this.dataGridView1.TabIndex = 14;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // button7
-            // 
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button7.Location = new System.Drawing.Point(21, 150);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(36, 32);
-            this.button7.TabIndex = 13;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
             // Form1
             // 
@@ -510,9 +493,9 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -545,7 +528,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.ToolStripMenuItem configuraçõesDaContaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adicionarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem funcionárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setorToolStripMenuItem;
@@ -559,7 +541,6 @@
         private System.Windows.Forms.ToolStripMenuItem mudarSenhaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem esqueciMinhaSenhaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button7;
     }
