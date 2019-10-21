@@ -177,6 +177,7 @@ namespace WindowsFormsApp1
                     {
                         var FuncionarioJsonString = await response.Content.ReadAsStringAsync();
                         dataGridView1.DataSource = JsonConvert.DeserializeObject<FuncionarioClass[]>(FuncionarioJsonString).ToList();
+                        string Header = dataGridView1.Columns["columnname"].HeaderText;
                     }
                     else
                     {
