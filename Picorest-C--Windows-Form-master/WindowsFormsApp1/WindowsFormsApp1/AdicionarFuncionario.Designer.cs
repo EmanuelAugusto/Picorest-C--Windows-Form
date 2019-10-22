@@ -41,6 +41,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -58,6 +61,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -65,10 +69,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,6 +80,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(249, 20);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -87,6 +88,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(249, 20);
             this.textBox2.TabIndex = 1;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // textBox4
             // 
@@ -94,6 +96,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(249, 20);
             this.textBox4.TabIndex = 3;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox5
             // 
@@ -101,6 +104,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(120, 20);
             this.textBox5.TabIndex = 4;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox6
             // 
@@ -174,7 +178,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Controls.Add(this.maskedTextBox3);
+            this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.maskedTextBox2);
             this.panel1.Controls.Add(this.maskedTextBox1);
             this.panel1.Controls.Add(this.checkBox1);
@@ -193,6 +197,30 @@
             this.panel1.TabIndex = 12;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(56, 191);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(118, 20);
+            this.textBox3.TabIndex = 31;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Location = new System.Drawing.Point(-2, 207);
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(0, 20);
+            this.maskedTextBox2.TabIndex = 30;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(192, 256);
+            this.maskedTextBox1.Mask = "000.000.000-00";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(113, 20);
+            this.maskedTextBox1.TabIndex = 29;
+            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -202,6 +230,7 @@
             this.checkBox1.TabIndex = 28;
             this.checkBox1.Text = "Sim";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // label21
             // 
@@ -249,6 +278,7 @@
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(249, 20);
             this.textBox12.TabIndex = 22;
+            this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
             // textBox11
             // 
@@ -256,6 +286,7 @@
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(249, 20);
             this.textBox11.TabIndex = 21;
+            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // label17
             // 
@@ -293,6 +324,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(249, 20);
             this.textBox7.TabIndex = 1;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label9
             // 
@@ -324,6 +356,7 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(249, 20);
             this.textBox8.TabIndex = 14;
+            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // label11
             // 
@@ -368,6 +401,15 @@
             this.panel2.TabIndex = 13;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // maskedTextBox4
+            // 
+            this.maskedTextBox4.Location = new System.Drawing.Point(56, 386);
+            this.maskedTextBox4.Mask = "aaaaaaaa";
+            this.maskedTextBox4.Name = "maskedTextBox4";
+            this.maskedTextBox4.Size = new System.Drawing.Size(111, 20);
+            this.maskedTextBox4.TabIndex = 25;
+            this.maskedTextBox4.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox4_MaskInputRejected);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
@@ -380,6 +422,7 @@
             this.button1.TabIndex = 24;
             this.button1.Text = "Cadastrar Funcionário";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label16
             // 
@@ -408,6 +451,7 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(111, 20);
             this.textBox9.TabIndex = 20;
+            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // label14
             // 
@@ -442,38 +486,6 @@
             this.label13.Text = "Alterar Imagem";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(192, 256);
-            this.maskedTextBox1.Mask = "000.000.000-00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(113, 20);
-            this.maskedTextBox1.TabIndex = 29;
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(-2, 207);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(0, 20);
-            this.maskedTextBox2.TabIndex = 30;
-            // 
-            // maskedTextBox3
-            // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(56, 191);
-            this.maskedTextBox3.Mask = "00/00/0000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(120, 20);
-            this.maskedTextBox3.TabIndex = 31;
-            this.maskedTextBox3.ValidatingType = typeof(System.DateTime);
-            // 
-            // maskedTextBox4
-            // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(56, 386);
-            this.maskedTextBox4.Mask = "aaaaaaaa";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(111, 20);
-            this.maskedTextBox4.TabIndex = 25;
-            // 
             // AdicionarFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -494,6 +506,7 @@
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdicionarFuncionario";
             this.Text = "AdicionarFuncionario";
             this.Load += new System.EventHandler(this.AdicionarFuncionario_Load);
@@ -547,7 +560,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

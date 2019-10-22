@@ -18,4 +18,4 @@ const senha = sequelize.define('senha', {
 
 module.exports = senha
 
-senha.sync({force: true})
+//senha.sync({force: true})

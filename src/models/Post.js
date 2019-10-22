@@ -18,4 +18,4 @@ const Postagem = sequelize.define('funcionarios', {
 
 module.exports = Postagem
 
-Postagem.sync({force: true})
+//Postagem.sync({force: true})

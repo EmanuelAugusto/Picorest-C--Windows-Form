@@ -70,7 +70,12 @@ namespace WindowsFormsApp1
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if(MessageBox.Show("confirma saida", "saida", MessageBoxButtons.YesNo,MessageBoxIcon.Question ) == DialogResult.Yes)
-            this.Close();
+            {
+                this.Hide();
+                var login = new Login();
+                login.Closed += (s, args) => this.Close();
+                login.Show();
+            }
         }
 
         private void contatosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -177,7 +182,6 @@ namespace WindowsFormsApp1
                     {
                         var FuncionarioJsonString = await response.Content.ReadAsStringAsync();
                         dataGridView1.DataSource = JsonConvert.DeserializeObject<FuncionarioClass[]>(FuncionarioJsonString).ToList();
-                        string Header = dataGridView1.Columns["columnname"].HeaderText;
                     }
                     else
                     {
@@ -192,9 +196,7 @@ namespace WindowsFormsApp1
 
         }
 
-        private void button7_Click_1(object sender, EventArgs e)
-        {
-            GetAllFuncionarios();
-        }
+        private void button7_Click_1(object sender, EventArgs e) => GetAllFuncionarios();
+
     }
 }

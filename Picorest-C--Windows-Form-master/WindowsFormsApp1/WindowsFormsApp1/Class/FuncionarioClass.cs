@@ -9,8 +9,19 @@ namespace WindowsFormsApp1.Class
     class FuncionarioClass
     {
         public int Id{ get; set; }
-        public string Nome { get; set; }
+        public string nome { get; set; }
+        public string datadeAdmissao { get; set; }
+        public string rg { get; set; }
+        public string cpf { get; set; }
+        public string endereco { get; set; }
+        public string email { get; set; }
+        public string cnh { get; set; }
         public string funcao { get; set; }
+        public string setor { get; set;}
+        public string cursos { get; set; }
+        public string nomeInstituicao { get; set; }
+        public string nomeUsuario { get; set; }
+        public string senha { get; set; }
     }
 
     class AlterarSenha

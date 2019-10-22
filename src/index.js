@@ -2,8 +2,7 @@ var express = require("express");
 const bodyParser = require('body-parser');
 const app = express();
 const handlebars = require('express-handlebars');
-const Post = require('./models/Post')
-const Senha = require('./models/SenhaTeste')
+const Funcionario = require('./models/Funcionario')
 
 app.engine('handlebars', handlebars({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars');
@@ -20,7 +19,7 @@ res.render('formulario');
 
 //CARREGANDO FUNCIONÁRIOS, Post.findAll(), Deve ser alterado
 app.get('/loadEmployees', function(req, res){
-  Post.findAll().then(function(post){
+  Funcionario.findAll().then(function(post){
   	res.send(post);
   });
 });
@@ -39,9 +38,20 @@ app.put('/updateEmployees/:id', function(req, res){
 
 //Post.create deve ser alterado para conexão com banco 
 app.post('/insertEmployees', function(req, res){
-	Post.create({
+	Funcionario.create({
 		nome: req.body.nome,
-		funcao: req.body.funcao
+		datadeAdmissao: req.body.datadeAdmissao,
+		rg: req.body.rg,
+		cpf: req.body.cpf,
+		endereco: req.body.endereco,
+		email: req.body.email,
+		cnh: req.body.cnh,
+		funcao: req.body.funcao,
+		setor: req.body.setor,
+		cursos: req.body.cursos,
+		nomeInstituicao: req.body.nomeInstituicao,
+		nomeUsuario: req.body.nomeUsuario,
+		senha: req.body.senha
 	}).then(function(){
 		res.send("post criado com sucesso");
 	}).catch(function(erro){
