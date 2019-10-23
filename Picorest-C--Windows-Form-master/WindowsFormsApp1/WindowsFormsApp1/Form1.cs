@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -172,28 +173,42 @@ namespace WindowsFormsApp1
 
         private async void GetAllFuncionarios()
         {
-            string URL = "http://localhost:8081/loadEmployees";
-
-            using ( var client = new HttpClient())
+            try
             {
-                using (var response = await client.GetAsync(URL))
+                string URL = "http://localhost:8081/loadEmployees";
+
+                using (var client = new HttpClient())
                 {
-                    if (response.IsSuccessStatusCode)
+                    using (var response = await client.GetAsync(URL))
                     {
-                        var FuncionarioJsonString = await response.Content.ReadAsStringAsync();
-                        dataGridView1.DataSource = JsonConvert.DeserializeObject<FuncionarioClass[]>(FuncionarioJsonString).ToList();
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var FuncionarioJsonString = await response.Content.ReadAsStringAsync();
+                            dataGridView1.DataSource = JsonConvert.DeserializeObject<FuncionarioClass[]>(FuncionarioJsonString).ToList();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Não foi possivel conectar a base de dados" + response.StatusCode);
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Não foi possivel conectar a base de dados" + response.StatusCode);
-                    }
+                }
+            }
+            catch
+            {
+                if (MessageBox.Show("Erro de conexão com o servirdor", "Deseja sair da aplicação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    this.Hide();
+                    var login = new Login();
+                    login.Closed += (s, args) => this.Close();
+                    login.Show();
                 }
             }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+           
         }
 
         private void button7_Click_1(object sender, EventArgs e) => GetAllFuncionarios();

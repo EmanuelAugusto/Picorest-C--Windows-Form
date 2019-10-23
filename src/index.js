@@ -11,6 +11,9 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 //rotas
+app.get('/', function(req, res){
+res.render('formulario');
+});
 //rota para teste de validação no html
 app.get('/createEmployees', function(req, res){
 res.render('formulario');

@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace WindowsFormsApp1.Class
 {
     class FuncionarioClass
     {
+        [DisplayName("Id")]
         public int Id{ get; set; }
+
+        [DisplayName("Nome")]
         public string nome { get; set; }
+
+        [DisplayName("Data de Admissão")]
         public string datadeAdmissao { get; set; }
         public string rg { get; set; }
         public string cpf { get; set; }

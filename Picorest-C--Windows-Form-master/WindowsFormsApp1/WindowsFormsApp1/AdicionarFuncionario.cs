@@ -169,7 +169,7 @@ namespace WindowsFormsApp1
             string NomeUsuario = textBox9.Text;
             string Senha = maskedTextBox4.Text;
 
-            MessageBox.Show("aqui");
+            
 
             FuncionarioClass funcionario = new FuncionarioClass();
             funcionario.nome = Nome;
@@ -186,11 +186,19 @@ namespace WindowsFormsApp1
             funcionario.nomeUsuario = NomeUsuario;
             funcionario.senha = Senha;
 
-            using(var client = new HttpClient())
+            try
             {
-                var serializedFuncionario = JsonConvert.SerializeObject(funcionario);
-                var content = new StringContent(serializedFuncionario, Encoding.UTF8, "application/json");
-                var result = await client.PostAsync(URL, content);
+                using (var client = new HttpClient())
+                {
+                    var serializedFuncionario = JsonConvert.SerializeObject(funcionario);
+                    var content = new StringContent(serializedFuncionario, Encoding.UTF8, "application/json");
+                    var result = await client.PostAsync(URL, content);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ocorreu um erro interno. Contate o provedor de serviço.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
             }
 
 
