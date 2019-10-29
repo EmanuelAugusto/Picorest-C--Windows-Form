@@ -175,7 +175,7 @@ namespace WindowsFormsApp1
         {
             try
             {
-                string URL = "http://localhost:8081/loadEmployees";
+                string URL = "http://localhost:3000/funcionarios";
 
                 using (var client = new HttpClient())
                 {
@@ -184,7 +184,7 @@ namespace WindowsFormsApp1
                         if (response.IsSuccessStatusCode)
                         {
                             var FuncionarioJsonString = await response.Content.ReadAsStringAsync();
-                            dataGridView1.DataSource = JsonConvert.DeserializeObject<FuncionarioClass[]>(FuncionarioJsonString).ToList();
+                            dataGridView1.DataSource = JsonConvert.DeserializeObject<RootObject[]>(FuncionarioJsonString).ToList();
 
                         }
                         else
@@ -213,5 +213,9 @@ namespace WindowsFormsApp1
 
         private void button7_Click_1(object sender, EventArgs e) => GetAllFuncionarios();
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

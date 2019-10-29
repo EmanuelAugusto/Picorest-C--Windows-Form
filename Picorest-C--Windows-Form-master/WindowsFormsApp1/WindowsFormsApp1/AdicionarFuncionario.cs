@@ -153,7 +153,7 @@ namespace WindowsFormsApp1
 
         private async void insertEmployees()
         {
-            string URL = "http://localhost:8081/insertEmployees";
+            /*string URL = httplocalhost:8081/insertEmployees;
 
             string Nome = textBox1.Text;
             string DatadeAdmissao = textBox3.Text;
@@ -199,7 +199,7 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Ocorreu um erro interno. Contate o provedor de serviço.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.Close();
-            }
+            }*/
 
 
           
@@ -212,6 +212,11 @@ namespace WindowsFormsApp1
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label30_Click(object sender, EventArgs e)
         {
 
         }

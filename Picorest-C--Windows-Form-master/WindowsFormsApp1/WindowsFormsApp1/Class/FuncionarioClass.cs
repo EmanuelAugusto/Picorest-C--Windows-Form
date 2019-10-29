@@ -7,54 +7,43 @@ using System.ComponentModel;
 
 namespace WindowsFormsApp1.Class
 {
-    class FuncionarioClass
+    public class Usuario
     {
-        [DisplayName("Id")]
-        public int Id{ get; set; }
-
-        [DisplayName("Nome")]
+        public int id { get; set; }
         public string nome { get; set; }
-
-        [DisplayName("Data de Admissão")]
-        public string datadeAdmissao { get; set; }
-
-        [DisplayName("Rg")]
-        public string rg { get; set; }
-
-        [DisplayName("Cpf")]
-        public string cpf { get; set; }
-
-        [DisplayName("Endereço")]
-        public string endereco { get; set; }
-
-        [DisplayName("E-mail")]
         public string email { get; set; }
-
-        [DisplayName("Carteira de Habilitação")]
-        public string cnh { get; set; }
-
-        [DisplayName("função")]
-        public string funcao { get; set; }
-
-        [DisplayName("Setor")]
-        public string setor { get; set;}
-
-        [DisplayName("Cursos")]
-        public string cursos { get; set; }
-
-        [DisplayName("Nome da Instituição")]
-        public string nomeInstituicao { get; set; }
-
-        [DisplayName("Nome de usuário")]
-        public string nomeUsuario { get; set; }
-
-        [DisplayName("Senha")]
-        public string senha { get; set; }
+        public string passWorld { get; set; }
     }
 
-    class AlterarSenha
+    public class Setor
     {
-        public int cpf { get; set; }
-        public string senha { get; set; }
+        public int id { get; set; }
+        public string descricao { get; set; }
+    }
+
+    public class Funcao
+    {
+        public int id { get; set; }
+        public string descricao { get; set; }
+    }
+
+    public class RootObject
+    {
+        //[DisplayName("Id")] para colocar no header da tabela
+        public int id { get; set; }
+        public string matricula { get; set; }
+        public string cpf { get; set; }
+        public string ctps { get; set; }
+        public object admissao { get; set; }
+        public object demissao { get; set; }
+        public string sexo { get; set; }
+        public string numero { get; set; }
+        public string logradouro { get; set; }
+        public string bairro { get; set; }
+        public string cidade { get; set; }
+        public string uf { get; set; }
+        public Usuario usuario { get; set; }
+        public Setor setor { get; set; }
+        public Funcao funcao { get; set; }
     }
 }
