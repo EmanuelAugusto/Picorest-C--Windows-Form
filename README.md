@@ -1,3 +1,3 @@
 # Picorest - Gerenciamento de pessoas
 
--v1.0 implementação das telas, 5 sprint
+-v1.1, 6 sprint
