@@ -151,26 +151,165 @@ namespace WindowsFormsApp1
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            insertEmployees();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label30_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox14_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox15_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox16_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox17_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox18_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox19_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private async void insertEmployees()
         {
-            /*string URL = httplocalhost:8081/insertEmployees;
+            string URL = "http://localhost:8081/insertEmployees";
 
             string Nome = textBox1.Text;
-            string DatadeAdmissao = textBox3.Text;
+            string Matricula = textBox10.Text;
             string Rg = textBox5.Text;
             string Cpf = maskedTextBox1.Text;
-            string Endereco = textBox2.Text;
-            string Email = textBox4.Text;
-            string Cnh = checkBox1.Text;
-            string Funcao = textBox11.Text;
-            string Setor = textBox12.Text;
-            string Cursos = textBox7.Text;
-            string NomeInstituicao = textBox8.Text;
+            string Ctps = textBox13.Text;
+            string DataAdmissao = textBox14.Text;
+            string DataDemissao = textBox15.Text;
+            string Sexo = comboBox1.Text;
+            string numeroCasa = textBox16.Text;
+            string Logradouro = textBox17.Text;
+            string Bairro = textBox18.Text;
+            string Cidade = textBox19.Text;
+            string Funcao = comboBox2.Text;
+            string Setor = comboBox3.Text;
             string NomeUsuario = textBox9.Text;
             string Senha = maskedTextBox4.Text;
+            string Email = textBox4.Text;
 
-            
+            if (Nome == "")
+            {
+                MessageBox.Show("O campo Nome é obrigatório");
+            }
+            if (Matricula == "")
+            {
+                MessageBox.Show("O campo Matrícula é obrigatórioe");
+            }
+            if (Rg == "")
+            {
+                MessageBox.Show("O campo Rg é obrigatório");
+            }
+            if (Cpf == "")
+            {
+                MessageBox.Show("O campo Cpf é obrigatório");
+            }
+            if (Ctps == "")
+            {
+                MessageBox.Show("O campo Carteiro do trabalho é obrigatório");
+            }
+            if (DataAdmissao == "")
+            {
+                MessageBox.Show("O campo Data de admissão é obrigatório");
+            }
+            if (Sexo == "")
+            {
+                MessageBox.Show("O campo Sexo é obrigatório");
+            }
+            if (numeroCasa == "")
+            {
+                MessageBox.Show("O campo Nº é obrigatório");
+            }
+            if (Logradouro == "")
+            {
+                MessageBox.Show("O campo Logradouro é obrigatório");
+            }
+            if (Bairro == "")
+            {
+                MessageBox.Show("O campo Bairro é obrigatório");
+            }
+            if (Cidade == "")
+            {
+                MessageBox.Show("O campo Cidade é obrigatório");
+            }
+            if (Funcao == "")
+            {
+                MessageBox.Show("O campo Função é obrigatório");
+            }
+            if (Setor == "")
+            {
+                MessageBox.Show("O campo Setor é obrigatório");
+            }
+            if (NomeUsuario == "")
+            {
+                MessageBox.Show("O campo Nome de Usuário é obrigatório");
+            }
+            if (Senha == "")
+            {
+                MessageBox.Show("O campo Senha é obrigatório");
+            }
+            if (Email == "" || !Email.Contains("@"))
+            {
+                MessageBox.Show("Digite um E-mail válido.");
+            }
 
+
+            /*
             FuncionarioClass funcionario = new FuncionarioClass();
             funcionario.nome = Nome;
             funcionario.datadeAdmissao = DatadeAdmissao;
@@ -201,22 +340,9 @@ namespace WindowsFormsApp1
                 this.Close();
             }*/
 
-
-          
-
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            insertEmployees();
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label30_Click(object sender, EventArgs e)
+        private void label23_Click(object sender, EventArgs e)
         {
 
         }

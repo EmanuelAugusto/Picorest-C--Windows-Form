@@ -110,6 +110,7 @@
             this.maskedTextBox1.Size = new System.Drawing.Size(108, 20);
             this.maskedTextBox1.TabIndex = 33;
             this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // button2
             // 
@@ -128,6 +129,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 31;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox2
             // 
@@ -135,6 +137,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(155, 20);
             this.textBox2.TabIndex = 30;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label9
             // 
@@ -190,6 +193,7 @@
             this.button1.TabIndex = 25;
             this.button1.Text = "Cadastrar Curso";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -217,6 +221,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(343, 20);
             this.textBox3.TabIndex = 2;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // pictureBox1
             // 

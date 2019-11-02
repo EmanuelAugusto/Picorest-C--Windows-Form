@@ -185,7 +185,7 @@ namespace WindowsFormsApp1
                         {
                             var FuncionarioJsonString = await response.Content.ReadAsStringAsync();
                             textBox1.Text = await response.Content.ReadAsStringAsync();
-                            dataGridView1.DataSource = JsonConvert.DeserializeObject<usuario[]>(FuncionarioJsonString).ToList();
+                            dataGridView1.DataSource = JsonConvert.DeserializeObject<RootObject[]>(FuncionarioJsonString).ToList();
 
                         }
                         else

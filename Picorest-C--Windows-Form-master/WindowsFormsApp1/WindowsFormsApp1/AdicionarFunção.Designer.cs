@@ -81,6 +81,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(789, 673);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button1
             // 
@@ -88,7 +89,7 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(613, 602);
+            this.button1.Location = new System.Drawing.Point(425, 450);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(157, 37);
             this.button1.TabIndex = 25;
@@ -169,6 +170,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(437, 69);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // pictureBox1
             // 

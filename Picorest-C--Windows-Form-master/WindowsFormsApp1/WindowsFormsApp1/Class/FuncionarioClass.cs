@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace WindowsFormsApp1.Class
 {
-    public class usuario
+    public class Usuario
     {
         public int id { get; set; }
         public string nome { get; set; }
@@ -29,10 +29,20 @@ namespace WindowsFormsApp1.Class
 
     public class RootObject
     {
-        //[DisplayName("Id")] para colocar no header da tabela
-        
-        public usuario nome { get; set; }
-        public Funcao descricao { get; set; }
-        public Funcao id { get; set; }
+        public int id { get; set; }
+        public string matricula { get; set; }
+        public string cpf { get; set; }
+        public string ctps { get; set; }
+        public object admissao { get; set; }
+        public object demissao { get; set; }
+        public string sexo { get; set; }
+        public string numero { get; set; }
+        public string logradouro { get; set; }
+        public string bairro { get; set; }
+        public string cidade { get; set; }
+        public string uf { get; set; }
+        public Usuario usuario { get; set; }
+        public Setor setor { get; set; }
+        public Funcao funcao { get; set; }
     }
 }
