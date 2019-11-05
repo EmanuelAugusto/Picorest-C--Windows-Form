@@ -10,12 +10,12 @@ module.exports = (sequelize, DataTypes) => {
     //   targetKey: 'funcaoId'
       
     // })
-    funcao.hasMany(models.funcaoCurso,{
+  /*  funcao.hasMany(models.funcaoCurso,{
 
       foreignKey: 'funcaoId', 
       targetKey: 'funcaoId'
       
-    })
+    })*/
   };
   return funcao;
 };

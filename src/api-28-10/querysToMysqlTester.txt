@@ -20,3 +20,11 @@ insert into picorestdb.funcionarios (id, matricula, cpf, ctps, admissao,
 INSERT setors
 
 insert into picorestdb.setors (id, descricao, createdAt, updatedAt) values (1, 'uma coisa qualquer', '0000-00-00', '0000-00-00')
+
+INSERT curso
+insert into picorestdb.funcionariocursos (id, comprovante, cargaHoraria, dataInicio, dataConclusao, funcionarioId, cursoId, createdAt, updatedAt) values ('1', 'teste', '80 horas', '0000-00-00', '0000-00-00', 1 , 1, '0000-00-00', '0000-00-00' )
+
+INSERT funcionarioCurso
+
+insert into picorestdb.cursos (id, descricao, cargaHoraria, dataInicio, dataConclusao, createdAt, updatedAt)
+values(1, 'teste', '80horas', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00')
