@@ -185,8 +185,23 @@ namespace WindowsFormsApp1
                         {
                             var FuncionarioJsonString = await response.Content.ReadAsStringAsync();
                             textBox1.Text = await response.Content.ReadAsStringAsync();
-                            dataGridView1.DataSource = JsonConvert.DeserializeObject<RootObject[]>(FuncionarioJsonString).ToList();
-
+                            dataGridView1.DataSource = JsonConvert.DeserializeObject<funcionarioFiltrado[]>(FuncionarioJsonString).ToList();
+                            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+                            {
+                                button.Name = "APAGAR";
+                                button.HeaderText = "APAGAR";
+                                button.Text = "APAGAR";
+                                button.UseColumnTextForButtonValue = true;
+                                this.dataGridView1.Columns.Add(button);
+                            }
+                            DataGridViewButtonColumn button2 = new DataGridViewButtonColumn();
+                            {
+                                button2.Name = "EDITAR";
+                                button2.HeaderText = "EDITAR";
+                                button2.Text = "EDITAR";
+                                button2.UseColumnTextForButtonValue = true;
+                                this.dataGridView1.Columns.Add(button2);
+                            }
                         }
                         else
                         {
@@ -206,15 +221,23 @@ namespace WindowsFormsApp1
                 }
             }
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            if (e.ColumnIndex == 3) //make sure button index here
+            {
+                MessageBox.Show("Deseja realmente apagar este funcionário?", "AVISO", MessageBoxButtons.YesNo ,MessageBoxIcon.Question);
+                //write your code here
+            }
         }
 
         private void button7_Click_1(object sender, EventArgs e) => GetAllFuncionarios();
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_Click(object sender, EventArgs e)
         {
 
         }

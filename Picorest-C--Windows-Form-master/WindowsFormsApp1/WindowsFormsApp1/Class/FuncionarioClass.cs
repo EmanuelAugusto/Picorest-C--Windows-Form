@@ -7,6 +7,19 @@ using System.ComponentModel;
 
 namespace WindowsFormsApp1.Class
 {
+
+    public class funcionarioFiltrado
+    {
+        [DisplayName("ID")]
+        public int id { get; set; }
+
+        [DisplayName("NOME")]
+        public string nome { get; set; }
+
+        [DisplayName("DESCRIÇÃO")]
+        public string descricao { get; set; }
+
+    }
     public class Usuario
     {
         public int id { get; set; }

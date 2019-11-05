@@ -1,8 +1,11 @@
 let db = require("../models")
+var funcionarioFiltrado = [];
 
 module.exports = {
 
+   
     findAll:async (req,res)=>{
+    var funcionarioFiltrado = [];
         try{
             let funcionario = await db.funcionario.findAll({
                 attributes:['id','matricula','cpf','ctps','admissao','demissao','sexo','numero','logradouro','bairro','cidade','uf'],
@@ -17,7 +20,16 @@ module.exports = {
                     attributes:['id','descricao']
                 }]
             })
-            res.json(funcionario)
+            for (var i = 0; i < funcionario.length; i++) {
+             funcionarioFiltrado.push({
+             id: funcionario[i].id,
+             nome: funcionario[i].usuario.nome,
+             descricao: funcionario[i].setor.descricao
+            });
+
+            }
+
+            res.json(funcionarioFiltrado);
         }
         catch(error){
             sendStatus(400)
