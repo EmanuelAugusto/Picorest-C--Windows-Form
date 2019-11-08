@@ -229,6 +229,11 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Deseja realmente apagar este funcionário?", "AVISO", MessageBoxButtons.YesNo ,MessageBoxIcon.Question);
                 //write your code here
             }
+            if (e.ColumnIndex == 4)
+            {
+                AdicionarFuncionario adicionar = new AdicionarFuncionario();
+                adicionar.Show();
+            }
         }
 
         private void button7_Click_1(object sender, EventArgs e)
