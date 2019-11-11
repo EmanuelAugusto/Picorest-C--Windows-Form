@@ -74,7 +74,7 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -533,16 +533,14 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // label13
+            // button2
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.AliceBlue;
-            this.label13.Location = new System.Drawing.Point(171, 252);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(77, 13);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "Alterar Imagem";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+            this.button2.Location = new System.Drawing.Point(144, 247);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(104, 23);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Alterar Imagem";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // AdicionarFuncionario
             // 
@@ -550,7 +548,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(1350, 697);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label6);
@@ -587,7 +585,6 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label20;
@@ -618,5 +615,6 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -11,6 +11,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using WindowsFormsApp1.Class;
+using System.Web;
 
 namespace WindowsFormsApp1
 {
@@ -19,7 +20,7 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
-           
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -70,7 +71,7 @@ namespace WindowsFormsApp1
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("confirma saida", "saida", MessageBoxButtons.YesNo,MessageBoxIcon.Question ) == DialogResult.Yes)
+            if (MessageBox.Show("confirma saida", "saida", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Hide();
                 var login = new Login();
@@ -98,13 +99,13 @@ namespace WindowsFormsApp1
 
         private void button10_Click(object sender, EventArgs e)
         {
-            AdicionarFuncionario insert = new AdicionarFuncionario();
+            AdicionarFuncionario insert = new AdicionarFuncionario("0");
             insert.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -114,7 +115,7 @@ namespace WindowsFormsApp1
 
         private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AdicionarFuncionario adicionarFuncionario = new AdicionarFuncionario();
+            AdicionarFuncionario adicionarFuncionario = new AdicionarFuncionario("0");
             adicionarFuncionario.Show();
         }
 
@@ -144,7 +145,7 @@ namespace WindowsFormsApp1
 
         private void enviarComentárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            comentarioSistema  comentario = new comentarioSistema();
+            comentarioSistema comentario = new comentarioSistema();
             comentario.Show();
         }
 
@@ -222,17 +223,21 @@ namespace WindowsFormsApp1
                 this.dataGridView1.Columns.Add(button2);
             }
         }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 3) //make sure button index here
             {
-                MessageBox.Show("Deseja realmente apagar este funcionário?", "AVISO", MessageBoxButtons.YesNo ,MessageBoxIcon.Question);
+                string value= dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
+                MessageBox.Show("Deseja realmente apagar este funcionário?", value, MessageBoxButtons.YesNo ,MessageBoxIcon.Question);
                 //write your code here
             }
             if (e.ColumnIndex == 4)
             {
-                AdicionarFuncionario adicionar = new AdicionarFuncionario();
-                adicionar.Show();
+                string value = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
+                string idAlter = value;
+                AdicionarFuncionario adicionar = new AdicionarFuncionario(idAlter);
+                adicionar.ShowDialog();
             }
         }
 

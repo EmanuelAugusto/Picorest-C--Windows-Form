@@ -16,9 +16,11 @@ namespace WindowsFormsApp1
 {
     public partial class AdicionarFuncionario : Form
     {
-        public AdicionarFuncionario()
+        public AdicionarFuncionario(string idAlter)
         {
+
             InitializeComponent();
+            MessageBox.Show("id" + idAlter);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
