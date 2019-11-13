@@ -173,6 +173,22 @@ namespace WindowsFormsApp1
             acessibilidadeDoTeclado.Show();
         }
 
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            this.dataGridView1.Columns.Clear();
+            GetAllFuncionarios();
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_Click(object sender, EventArgs e)
+        {
+
+        }
         private async void GetAllFuncionarios()
         {
             try
@@ -229,8 +245,12 @@ namespace WindowsFormsApp1
             if (e.ColumnIndex == 3) //make sure button index here
             {
                 string value= dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
-                MessageBox.Show("Deseja realmente apagar este funcionário?", value, MessageBoxButtons.YesNo ,MessageBoxIcon.Question);
-                //write your code here
+                DialogResult dialogResult = MessageBox.Show("Deseja realmente apagar este funcionário?", "AVISO", MessageBoxButtons.YesNo ,MessageBoxIcon.Question);
+
+                if (dialogResult  == DialogResult.Yes)
+                {
+                    deleteEmplyees(value);
+                }
             }
             if (e.ColumnIndex == 4)
             {
@@ -241,21 +261,36 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void button7_Click_1(object sender, EventArgs e)
-        {
-            this.dataGridView1.Columns.Clear();
-            GetAllFuncionarios();
-            
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private async void deleteEmplyees(string  idDelete)
         {
 
-        }
+            string URL = "http://localhost:3000/funcionarios";
+            string id = idDelete;
+            //deBUG
+           // MessageBox.Show("id " + id);
 
-        private void dataGridView1_Click(object sender, EventArgs e)
-        {
+
+            using ( var client  = new HttpClient())
+            {
+                client.BaseAddress = new Uri(URL);
+                HttpResponseMessage responseMessage = await client.DeleteAsync(String.Format("{0}/{1}", URL, id));
+                //DEBUG
+               // MessageBox.Show("ERR!   " + responseMessage);
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Funcionário excluido com sucesso");
+                    this.dataGridView1.Columns.Clear();
+                }
+                else
+                {
+                    this.dataGridView1.Columns.Clear();
+                    MessageBox.Show("Falha ao excluir o Funcinário :" + responseMessage.StatusCode);
+                }
+
+                GetAllFuncionarios();
+            }
 
         }
+       
     }
 }

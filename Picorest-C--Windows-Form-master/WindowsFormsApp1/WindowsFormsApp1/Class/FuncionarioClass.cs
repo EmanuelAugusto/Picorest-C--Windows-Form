@@ -58,4 +58,10 @@ namespace WindowsFormsApp1.Class
         public Setor setor { get; set; }
         public Funcao funcao { get; set; }
     }
+
+    public class deleteEmployeess
+    {
+        public string id { get; set; }
+    }
+
 }

@@ -20,9 +20,11 @@ namespace WindowsFormsApp1
         {
 
             InitializeComponent();
-            MessageBox.Show("id" + idAlter);
-        }
+            //DEBUG
+            // MessageBox.Show("id" + idAlter);
+            insertOrUpdate(idAlter);
 
+        }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -155,7 +157,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            insertEmployees();
+            
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -223,130 +225,32 @@ namespace WindowsFormsApp1
 
         }
 
-        private async void insertEmployees()
-        {
-            string URL = "http://localhost:8081/insertEmployees";
-
-            string Nome = textBox1.Text;
-            string Matricula = textBox10.Text;
-            string Rg = textBox5.Text;
-            string Cpf = maskedTextBox1.Text;
-            string Ctps = textBox13.Text;
-            string DataAdmissao = textBox14.Text;
-            string DataDemissao = textBox15.Text;
-            string Sexo = comboBox1.Text;
-            string numeroCasa = textBox16.Text;
-            string Logradouro = textBox17.Text;
-            string Bairro = textBox18.Text;
-            string Cidade = textBox19.Text;
-            string Funcao = comboBox2.Text;
-            string Setor = comboBox3.Text;
-            string NomeUsuario = textBox9.Text;
-            string Senha = maskedTextBox4.Text;
-            string Email = textBox4.Text;
-
-            if (Nome == "")
-            {
-                MessageBox.Show("O campo Nome é obrigatório");
-            }
-            if (Matricula == "")
-            {
-                MessageBox.Show("O campo Matrícula é obrigatórioe");
-            }
-            if (Rg == "")
-            {
-                MessageBox.Show("O campo Rg é obrigatório");
-            }
-            if (Cpf == "")
-            {
-                MessageBox.Show("O campo Cpf é obrigatório");
-            }
-            if (Ctps == "")
-            {
-                MessageBox.Show("O campo Carteiro do trabalho é obrigatório");
-            }
-            if (DataAdmissao == "")
-            {
-                MessageBox.Show("O campo Data de admissão é obrigatório");
-            }
-            if (Sexo == "")
-            {
-                MessageBox.Show("O campo Sexo é obrigatório");
-            }
-            if (numeroCasa == "")
-            {
-                MessageBox.Show("O campo Nº é obrigatório");
-            }
-            if (Logradouro == "")
-            {
-                MessageBox.Show("O campo Logradouro é obrigatório");
-            }
-            if (Bairro == "")
-            {
-                MessageBox.Show("O campo Bairro é obrigatório");
-            }
-            if (Cidade == "")
-            {
-                MessageBox.Show("O campo Cidade é obrigatório");
-            }
-            if (Funcao == "")
-            {
-                MessageBox.Show("O campo Função é obrigatório");
-            }
-            if (Setor == "")
-            {
-                MessageBox.Show("O campo Setor é obrigatório");
-            }
-            if (NomeUsuario == "")
-            {
-                MessageBox.Show("O campo Nome de Usuário é obrigatório");
-            }
-            if (Senha == "")
-            {
-                MessageBox.Show("O campo Senha é obrigatório");
-            }
-            if (Email == "" || !Email.Contains("@"))
-            {
-                MessageBox.Show("Digite um E-mail válido.");
-            }
-
-
-            /*
-            FuncionarioClass funcionario = new FuncionarioClass();
-            funcionario.nome = Nome;
-            funcionario.datadeAdmissao = DatadeAdmissao;
-            funcionario.rg = Rg;
-            funcionario.cpf = Cpf;
-            funcionario.endereco = Endereco;
-            funcionario.email = Email;
-            funcionario.cnh = Cnh;
-            funcionario.funcao = Funcao;
-            funcionario.setor = Setor;
-            funcionario.cursos = Cursos;
-            funcionario.nomeInstituicao = NomeInstituicao;
-            funcionario.nomeUsuario = NomeUsuario;
-            funcionario.senha = Senha;
-
-            try
-            {
-                using (var client = new HttpClient())
-                {
-                    var serializedFuncionario = JsonConvert.SerializeObject(funcionario);
-                    var content = new StringContent(serializedFuncionario, Encoding.UTF8, "application/json");
-                    var result = await client.PostAsync(URL, content);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Ocorreu um erro interno. Contate o provedor de serviço.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                this.Close();
-            }*/
-
-        }
-
         private void label23_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void insertOrUpdate(string decide)
+        {
+            if (decide == "0")
+            {
+                insert();
+            }
+            else
+            {
+                update(decide);
+            }
+        }
+
+        private async void insert()
+        {
+
+        }
+
+        private async void update(string id)
+        {
+
+        }
+
     }
 }
