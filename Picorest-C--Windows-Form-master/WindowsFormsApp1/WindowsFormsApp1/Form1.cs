@@ -198,7 +198,7 @@ namespace WindowsFormsApp1
             }
             catch
             {
-                if (MessageBox.Show("Erro de conexão com o servirdor", "Deseja sair da aplicação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show("Erro de conexão com o servidor", "Deseja sair da aplicação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     this.Hide();
                     var login = new Login();
