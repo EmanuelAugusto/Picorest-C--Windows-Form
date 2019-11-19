@@ -11,6 +11,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using WindowsFormsApp1.Class;
+using System.Web;
 
 namespace WindowsFormsApp1
 {
@@ -19,7 +20,7 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
-           
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -70,7 +71,7 @@ namespace WindowsFormsApp1
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("confirma saida", "saida", MessageBoxButtons.YesNo,MessageBoxIcon.Question ) == DialogResult.Yes)
+            if (MessageBox.Show("confirma saida", "saida", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Hide();
                 var login = new Login();
@@ -93,17 +94,18 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             GetAllFuncionarios();
+            dataGridView1.Refresh();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            AdicionarFuncionario insert = new AdicionarFuncionario();
+            AdicionarFuncionario insert = new AdicionarFuncionario("0");
             insert.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -113,7 +115,7 @@ namespace WindowsFormsApp1
 
         private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AdicionarFuncionario adicionarFuncionario = new AdicionarFuncionario();
+            AdicionarFuncionario adicionarFuncionario = new AdicionarFuncionario("0");
             adicionarFuncionario.Show();
         }
 
@@ -143,7 +145,7 @@ namespace WindowsFormsApp1
 
         private void enviarComentárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            comentarioSistema  comentario = new comentarioSistema();
+            comentarioSistema comentario = new comentarioSistema();
             comentario.Show();
         }
 
@@ -171,6 +173,22 @@ namespace WindowsFormsApp1
             acessibilidadeDoTeclado.Show();
         }
 
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            this.dataGridView1.Columns.Clear();
+            GetAllFuncionarios();
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_Click(object sender, EventArgs e)
+        {
+
+        }
         private async void GetAllFuncionarios()
         {
             try
@@ -185,8 +203,7 @@ namespace WindowsFormsApp1
                         {
                             var FuncionarioJsonString = await response.Content.ReadAsStringAsync();
                             textBox1.Text = await response.Content.ReadAsStringAsync();
-                            dataGridView1.DataSource = JsonConvert.DeserializeObject<usuario[]>(FuncionarioJsonString).ToList();
-
+                            dataGridView1.DataSource = JsonConvert.DeserializeObject<funcionarioFiltrado[]>(FuncionarioJsonString).ToList();
                         }
                         else
                         {
@@ -197,7 +214,7 @@ namespace WindowsFormsApp1
             }
             catch
             {
-                if (MessageBox.Show("Erro de conexão com o servirdor", "Deseja sair da aplicação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show("Erro de conexão com o servidor", "Deseja sair da aplicação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     this.Hide();
                     var login = new Login();
@@ -205,18 +222,75 @@ namespace WindowsFormsApp1
                     login.Show();
                 }
             }
+            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+            {
+                button.Name = "APAGAR";
+                button.HeaderText = "APAGAR";
+                button.Text = "APAGAR";
+                button.UseColumnTextForButtonValue = true;
+                this.dataGridView1.Columns.Add(button);
+            }
+            DataGridViewButtonColumn button2 = new DataGridViewButtonColumn();
+            {
+                button2.Name = "EDITAR";
+                button2.HeaderText = "EDITAR";
+                button2.Text = "EDITAR";
+                button2.UseColumnTextForButtonValue = true;
+                this.dataGridView1.Columns.Add(button2);
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            if (e.ColumnIndex == 3) //make sure button index here
+            {
+                string value= dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
+                DialogResult dialogResult = MessageBox.Show("Deseja realmente apagar este funcionário?", "AVISO", MessageBoxButtons.YesNo ,MessageBoxIcon.Question);
+
+                if (dialogResult  == DialogResult.Yes)
+                {
+                    deleteEmplyees(value);
+                }
+            }
+            if (e.ColumnIndex == 4)
+            {
+                string value = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
+                string idAlter = value;
+                AdicionarFuncionario adicionar = new AdicionarFuncionario(idAlter);
+                adicionar.ShowDialog();
+            }
         }
 
-        private void button7_Click_1(object sender, EventArgs e) => GetAllFuncionarios();
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private async void deleteEmplyees(string  idDelete)
         {
 
+            string URL = "http://localhost:3000/funcionarios";
+            string id = idDelete;
+            //deBUG
+           // MessageBox.Show("id " + id);
+
+
+            using ( var client  = new HttpClient())
+            {
+                client.BaseAddress = new Uri(URL);
+                HttpResponseMessage responseMessage = await client.DeleteAsync(String.Format("{0}/{1}", URL, id));
+                //DEBUG
+               // MessageBox.Show("ERR!   " + responseMessage);
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Funcionário excluido com sucesso");
+                    this.dataGridView1.Columns.Clear();
+                }
+                else
+                {
+                    this.dataGridView1.Columns.Clear();
+                    MessageBox.Show("Falha ao excluir o Funcinário :" + responseMessage.StatusCode);
+                }
+
+                GetAllFuncionarios();
+            }
+
         }
+       
     }
 }

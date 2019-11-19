@@ -16,11 +16,15 @@ namespace WindowsFormsApp1
 {
     public partial class AdicionarFuncionario : Form
     {
-        public AdicionarFuncionario()
+        public AdicionarFuncionario(string idAlter)
         {
-            InitializeComponent();
-        }
 
+            InitializeComponent();
+            //DEBUG
+            // MessageBox.Show("id" + idAlter);
+            insertOrUpdate(idAlter);
+
+        }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -151,64 +155,9 @@ namespace WindowsFormsApp1
 
         }
 
-        private async void insertEmployees()
-        {
-            /*string URL = httplocalhost:8081/insertEmployees;
-
-            string Nome = textBox1.Text;
-            string DatadeAdmissao = textBox3.Text;
-            string Rg = textBox5.Text;
-            string Cpf = maskedTextBox1.Text;
-            string Endereco = textBox2.Text;
-            string Email = textBox4.Text;
-            string Cnh = checkBox1.Text;
-            string Funcao = textBox11.Text;
-            string Setor = textBox12.Text;
-            string Cursos = textBox7.Text;
-            string NomeInstituicao = textBox8.Text;
-            string NomeUsuario = textBox9.Text;
-            string Senha = maskedTextBox4.Text;
-
-            
-
-            FuncionarioClass funcionario = new FuncionarioClass();
-            funcionario.nome = Nome;
-            funcionario.datadeAdmissao = DatadeAdmissao;
-            funcionario.rg = Rg;
-            funcionario.cpf = Cpf;
-            funcionario.endereco = Endereco;
-            funcionario.email = Email;
-            funcionario.cnh = Cnh;
-            funcionario.funcao = Funcao;
-            funcionario.setor = Setor;
-            funcionario.cursos = Cursos;
-            funcionario.nomeInstituicao = NomeInstituicao;
-            funcionario.nomeUsuario = NomeUsuario;
-            funcionario.senha = Senha;
-
-            try
-            {
-                using (var client = new HttpClient())
-                {
-                    var serializedFuncionario = JsonConvert.SerializeObject(funcionario);
-                    var content = new StringContent(serializedFuncionario, Encoding.UTF8, "application/json");
-                    var result = await client.PostAsync(URL, content);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Ocorreu um erro interno. Contate o provedor de serviço.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                this.Close();
-            }*/
-
-
-          
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            insertEmployees();
+            
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -220,5 +169,88 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox14_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox15_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox16_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox17_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox18_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox19_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void insertOrUpdate(string decide)
+        {
+            if (decide == "0")
+            {
+                insert();
+            }
+            else
+            {
+                update(decide);
+            }
+        }
+
+        private async void insert()
+        {
+
+        }
+
+        private async void update(string id)
+        {
+
+        }
+
     }
 }

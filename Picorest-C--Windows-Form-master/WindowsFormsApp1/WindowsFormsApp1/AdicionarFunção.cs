@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            insertFunction();
         }
 
         private void AdicionarFunção_Load(object sender, EventArgs e)
@@ -61,5 +61,31 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private async void insertFunction()
+        {
+            string Descricao = textBox1.Text;
+            string Cursos = textBox3.Text;
+
+            if(Descricao == "")
+            {
+                MessageBox.Show("O Campo descrição é obrigatório");
+            }
+
+            if (Cursos == "")
+            {
+                MessageBox.Show("O Campo Cursos é obrigatório");
+            }
+        }
+
     }
 }
