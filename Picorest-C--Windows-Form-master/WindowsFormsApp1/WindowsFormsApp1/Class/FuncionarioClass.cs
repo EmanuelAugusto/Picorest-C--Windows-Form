@@ -64,4 +64,25 @@ namespace WindowsFormsApp1.Class
         public string id { get; set; }
     }
 
+    public class insertEmployeess
+    {
+        public string matricula { get; set; }
+        public string cpf { get; set; }
+        public string ctps { get; set; }
+        public string admissao  { get; set; }
+        public string demissao { get; set; }
+        public string sexo { get; set; }
+        public string numero { get; set; }
+        public string logradouro { get; set; }
+        public string bairro { get; set; }
+        public string cidade { get; set; }
+        public string uf { get; set; }
+        public string nome { get; set; }
+        public string email { get; set; }
+        public string senha { get; set; }
+        public string descricao { get; set; }
+        public string setor { get; set; }
+
+    }
+
 }

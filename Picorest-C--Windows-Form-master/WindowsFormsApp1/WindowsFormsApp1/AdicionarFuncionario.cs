@@ -16,13 +16,14 @@ namespace WindowsFormsApp1
 {
     public partial class AdicionarFuncionario : Form
     {
+        string decide;
         public AdicionarFuncionario(string idAlter)
         {
 
             InitializeComponent();
             //DEBUG
             // MessageBox.Show("id" + idAlter);
-            insertOrUpdate(idAlter);
+            idAlter = decide;
 
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -157,7 +158,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            insertOrUpdate();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -230,20 +231,76 @@ namespace WindowsFormsApp1
 
         }
 
-        private void insertOrUpdate(string decide)
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void insertOrUpdate()
         {
             if (decide == "0")
             {
+                MessageBox.Show("insert");
                 insert();
             }
             else
             {
-                update(decide);
+                MessageBox.Show("update");
+                insert();
             }
         }
 
         private async void insert()
         {
+            string Matricula = textBox10.Text;
+            string Cpf = maskedTextBox1.Text;
+            string Ctps = textBox13.Text;
+            string Admissao = textBox14.Text;
+            string Demissao = textBox15.Text;
+            string Sexo = comboBox1.Text;
+            string Numero = textBox16.Text;
+            string Logradouro = textBox17.Text;
+            string Bairro = textBox18.Text;
+            string Cidade = textBox18.Text;
+            string Uf = textBox2.Text;
+            string Descricao = comboBox2.Text;
+            string Setor = comboBox3.Text;
+            string Nome = textBox1.Text;
+            string Email = textBox4.Text;
+            string Senha = maskedTextBox4.Text;
+            
+
+            insertEmployeess insert = new insertEmployeess();
+            insert.matricula = Matricula;
+            insert.cpf = Cpf;
+            insert.ctps = Ctps;
+            insert.admissao = Admissao;
+            insert.demissao = Demissao;
+            insert.sexo = Sexo;
+            insert.numero = Numero;
+            insert.logradouro = Logradouro;
+            insert.bairro = Bairro;
+            insert.cidade = Uf;
+            insert.nome = Nome;
+            insert.email = Email;
+            insert.senha = Senha;
+            insert.descricao = Descricao;
+            insert.setor = Setor;
+
+            string URL = "http://localhost:3000/funcionarios";
+
+            using (var client = new HttpClient())
+            {
+                var serializedFuncionario = JsonConvert.SerializeObject(insert);
+                var content = new StringContent(serializedFuncionario, Encoding.UTF8, "application/json");
+                var result = await client.PostAsync(URL, content);
+            }
+
 
         }
 
@@ -252,5 +309,6 @@ namespace WindowsFormsApp1
 
         }
 
+       
     }
 }
