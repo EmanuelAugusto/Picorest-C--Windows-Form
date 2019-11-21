@@ -23,7 +23,8 @@ namespace WindowsFormsApp1
             InitializeComponent();
             //DEBUG
             // MessageBox.Show("id" + idAlter);
-            idAlter = decide;
+            decide = idAlter;
+            MessageBox.Show("DEBUG   " + decide);
 
         }
         private void textBox2_TextChanged(object sender, EventArgs e)

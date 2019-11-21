@@ -16,9 +16,17 @@ namespace WindowsFormsApp1.Class
         [DisplayName("NOME")]
         public string nome { get; set; }
 
-        [DisplayName("DESCRIÇÃO")]
-        public string descricao { get; set; }
+        [DisplayName("SETOR")]
+        public string setor { get; set; }
 
+        [DisplayName("FUNÇÃO")]
+        public string funcao { get; set; }
+
+        [DisplayName("CURSO")]
+        public string curso { get; set; }
+
+        [DisplayName("COMPROVANTE")]
+        public string comprovante { get; set; }
     }
     public class Usuario
     {

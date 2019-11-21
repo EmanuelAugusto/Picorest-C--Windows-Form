@@ -193,7 +193,7 @@ namespace WindowsFormsApp1
         {
             try
             {
-                string URL = "http://localhost:3000/funcionarios";
+                string URL = "http://localhost:3000/funcionarioCursos";
 
                 using (var client = new HttpClient())
                 {
@@ -242,9 +242,10 @@ namespace WindowsFormsApp1
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 3) //make sure button index here
+            if (e.ColumnIndex == 6) //make sure button index here
             {
                 string value= dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
+                MessageBox.Show("DEBUG   " + value);
                 DialogResult dialogResult = MessageBox.Show("Deseja realmente apagar este funcionário?", "AVISO", MessageBoxButtons.YesNo ,MessageBoxIcon.Question);
 
                 if (dialogResult  == DialogResult.Yes)
@@ -252,11 +253,11 @@ namespace WindowsFormsApp1
                     deleteEmplyees(value);
                 }
             }
-            if (e.ColumnIndex == 4)
+            if (e.ColumnIndex == 7)
             {
                 string value = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
-                string idAlter = value;
-                AdicionarFuncionario adicionar = new AdicionarFuncionario(idAlter);
+                MessageBox.Show("DEBUG   " + value);
+                AdicionarFuncionario adicionar = new AdicionarFuncionario(value);
                 adicionar.ShowDialog();
             }
         }
@@ -264,7 +265,7 @@ namespace WindowsFormsApp1
         private async void deleteEmplyees(string  idDelete)
         {
 
-            string URL = "http://localhost:3000/funcionarios";
+            string URL = "http://localhost:3000/funcionarioCursos";
             string id = idDelete;
             //deBUG
            // MessageBox.Show("id " + id);
