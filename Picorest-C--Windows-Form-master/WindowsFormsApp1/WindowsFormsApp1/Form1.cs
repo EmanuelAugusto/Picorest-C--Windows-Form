@@ -227,6 +227,8 @@ namespace WindowsFormsApp1
                 button.Name = "APAGAR";
                 button.HeaderText = "APAGAR";
                 button.Text = "APAGAR";
+                button.FlatStyle = FlatStyle.Flat;
+                button.DefaultCellStyle.BackColor = Color.LightCoral;
                 button.UseColumnTextForButtonValue = true;
                 this.dataGridView1.Columns.Add(button);
             }

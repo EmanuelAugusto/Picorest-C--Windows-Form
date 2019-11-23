@@ -476,8 +476,8 @@
             // maskedTextBox4
             // 
             this.maskedTextBox4.Location = new System.Drawing.Point(59, 321);
-            this.maskedTextBox4.Mask = "aaaaaaaa";
             this.maskedTextBox4.Name = "maskedTextBox4";
+            this.maskedTextBox4.PasswordChar = '*';
             this.maskedTextBox4.Size = new System.Drawing.Size(111, 20);
             this.maskedTextBox4.TabIndex = 25;
             this.maskedTextBox4.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox4_MaskInputRejected);

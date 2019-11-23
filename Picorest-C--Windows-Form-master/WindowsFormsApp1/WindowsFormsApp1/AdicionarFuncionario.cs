@@ -25,6 +25,14 @@ namespace WindowsFormsApp1
             // MessageBox.Show("id" + idAlter);
             decide = idAlter;
             MessageBox.Show("DEBUG   " + decide);
+            if(decide != "0") 
+            {
+                this.Text = "Atualizar Funcionário";
+            }
+            else
+            {
+                this.Text = "Adicionar Funcionário";
+            }
 
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -252,7 +260,7 @@ namespace WindowsFormsApp1
             else
             {
                 MessageBox.Show("update");
-                insert();
+                update(decide);
             }
         }
 
@@ -274,32 +282,107 @@ namespace WindowsFormsApp1
             string Nome = textBox1.Text;
             string Email = textBox4.Text;
             string Senha = maskedTextBox4.Text;
-            
 
-            insertEmployeess insert = new insertEmployeess();
-            insert.matricula = Matricula;
-            insert.cpf = Cpf;
-            insert.ctps = Ctps;
-            insert.admissao = Admissao;
-            insert.demissao = Demissao;
-            insert.sexo = Sexo;
-            insert.numero = Numero;
-            insert.logradouro = Logradouro;
-            insert.bairro = Bairro;
-            insert.cidade = Uf;
-            insert.nome = Nome;
-            insert.email = Email;
-            insert.senha = Senha;
-            insert.descricao = Descricao;
-            insert.setor = Setor;
-
-            string URL = "http://localhost:3000/funcionarios";
-
-            using (var client = new HttpClient())
+            if(Matricula == "")
             {
-                var serializedFuncionario = JsonConvert.SerializeObject(insert);
-                var content = new StringContent(serializedFuncionario, Encoding.UTF8, "application/json");
-                var result = await client.PostAsync(URL, content);
+                MessageBox.Show("O campo matrícula é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Cpf == "")
+            {
+                MessageBox.Show("O campo Cpf é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Ctps == "")
+            {
+                MessageBox.Show("O campo Carteira de trabalho é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Admissao == "")
+            {
+                MessageBox.Show("O campo data de Admissão é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Sexo == "")
+            {
+                MessageBox.Show("O campo Sexo é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Numero == "")
+            {
+                MessageBox.Show("O campo Número é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Logradouro == "")
+            {
+                MessageBox.Show("O campo Logradouro é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Bairro == "")
+            {
+                MessageBox.Show("O campo Bairro é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Cidade == "")
+            {
+                MessageBox.Show("O campo Cidade é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Uf == "")
+            {
+                MessageBox.Show("O campo UF é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Descricao == "")
+            {
+                MessageBox.Show("O campo Descrição é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Setor == "")
+            {
+                MessageBox.Show("O campo Setor é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Nome == "")
+            {
+                MessageBox.Show("O campo Nome é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Email == "")
+            {
+                MessageBox.Show("O campo Email é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (!Email.Contains("@"))
+            {
+                MessageBox.Show("Digite um endereço de E-mail Válido", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Senha == "")
+            {
+                MessageBox.Show("O campo Senha é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+
+                try
+                {
+
+                    insertEmployeess insert = new insertEmployeess();
+                    insert.matricula = Matricula;
+                    insert.cpf = Cpf;
+                    insert.ctps = Ctps;
+                    insert.admissao = Admissao;
+                    insert.demissao = Demissao;
+                    insert.sexo = Sexo;
+                    insert.numero = Numero;
+                    insert.logradouro = Logradouro;
+                    insert.bairro = Bairro;
+                    insert.cidade = Uf;
+                    insert.nome = Nome;
+                    insert.email = Email;
+                    insert.senha = Senha;
+                    insert.descricao = Descricao;
+                    insert.setor = Setor;
+
+                    string URL = "http://localhost:3000/funcionarios";
+
+                    using (var client = new HttpClient())
+                    {
+                        var serializedFuncionario = JsonConvert.SerializeObject(insert);
+                        var content = new StringContent(serializedFuncionario, Encoding.UTF8, "application/json");
+                        var result = await client.PostAsync(URL, content);
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Erro de conexão com o servidor", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
 
 
@@ -307,6 +390,130 @@ namespace WindowsFormsApp1
 
         private async void update(string id)
         {
+            string Matricula = textBox10.Text;
+            string Cpf = maskedTextBox1.Text;
+            string Ctps = textBox13.Text;
+            string Admissao = textBox14.Text;
+            string Demissao = textBox15.Text;
+            string Sexo = comboBox1.Text;
+            string Numero = textBox16.Text;
+            string Logradouro = textBox17.Text;
+            string Bairro = textBox18.Text;
+            string Cidade = textBox18.Text;
+            string Uf = textBox2.Text;
+            string Descricao = comboBox2.Text;
+            string Setor = comboBox3.Text;
+            string Nome = textBox1.Text;
+            string Email = textBox4.Text;
+            string Senha = maskedTextBox4.Text;
+
+            if (Matricula == "")
+            {
+                MessageBox.Show("O campo matrícula é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Cpf == "")
+            {
+                MessageBox.Show("O campo Cpf é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Ctps == "")
+            {
+                MessageBox.Show("O campo Carteira de trabalho é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Admissao == "")
+            {
+                MessageBox.Show("O campo data de Admissão é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Sexo == "")
+            {
+                MessageBox.Show("O campo Sexo é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Numero == "")
+            {
+                MessageBox.Show("O campo Número é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Logradouro == "")
+            {
+                MessageBox.Show("O campo Logradouro é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Bairro == "")
+            {
+                MessageBox.Show("O campo Bairro é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Cidade == "")
+            {
+                MessageBox.Show("O campo Cidade é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Uf == "")
+            {
+                MessageBox.Show("O campo UF é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Descricao == "")
+            {
+                MessageBox.Show("O campo Descrição é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Setor == "")
+            {
+                MessageBox.Show("O campo Setor é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Nome == "")
+            {
+                MessageBox.Show("O campo Nome é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Email == "")
+            {
+                MessageBox.Show("O campo Email é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (!Email.Contains("@"))
+            {
+                MessageBox.Show("Digite um endereço de E-mail Válido", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Senha == "")
+            {
+                MessageBox.Show("O campo Senha é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+
+                try
+                {
+
+                    insertEmployeess insert = new insertEmployeess();
+                    insert.matricula = Matricula;
+                    insert.cpf = Cpf;
+                    insert.ctps = Ctps;
+                    insert.admissao = Admissao;
+                    insert.demissao = Demissao;
+                    insert.sexo = Sexo;
+                    insert.numero = Numero;
+                    insert.logradouro = Logradouro;
+                    insert.bairro = Bairro;
+                    insert.cidade = Uf;
+                    insert.nome = Nome;
+                    insert.email = Email;
+                    insert.senha = Senha;
+                    insert.descricao = Descricao;
+                    insert.setor = Setor;
+
+                    string URL = "http://localhost:3000/funcionarios";
+
+                    using (var client = new HttpClient())
+                    {
+                        HttpResponseMessage responseMessage = await client.PutAsJsonAsync(URL + "/" + id , insert);
+                        if (responseMessage.IsSuccessStatusCode)
+                        {
+                            MessageBox.Show("Funcionário Alterado com suceso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Hide();
+                            var home = new Form1();
+                            home.Closed += (s, args) => this.Close();
+                            home.Show();
+                        }
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Erro de conexão com o servidor", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            };
 
         }
 

@@ -377,7 +377,7 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.Navy;
+            this.button5.BackColor = System.Drawing.Color.Blue;
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
