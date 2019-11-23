@@ -28,9 +28,12 @@ namespace WindowsFormsApp1
             if(decide != "0") 
             {
                 this.Text = "Atualizar Funcionário";
+                GetEmployeesId(decide);
+
             }
             else
             {
+
                 this.Text = "Adicionar Funcionário";
             }
 
@@ -386,6 +389,46 @@ namespace WindowsFormsApp1
             }
 
 
+        }
+
+        private async void GetEmployeesId(string id)
+        {
+            try
+            {
+                string URL = "http://localhost:3000/funcionarios/" + id.ToString();
+
+                using (var client = new HttpClient())
+                {
+                    //BindingSource LoadEmployees = new BindingSource();
+
+                    HttpResponseMessage response = await client.GetAsync(URL);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("DEBUG    " + await response.Content.ReadAsStringAsync());
+                        var FuncionarioJsonString = await response.Content.ReadAsStringAsync();
+                        JsonConvert.DeserializeObject<funcionarioFiltrado[]>(FuncionarioJsonString);
+
+                        funcionarioFiltrado funcionario = new funcionarioFiltrado();
+                        funcionario.nome = textBox1.Text;
+
+                         // var json = JsonConvert.DeserializeObject<funcionarioFiltrado[]>(FuncionarioJsonString).ToList();
+                         // LoadEmployees.DataSource = JsonConvert.DeserializeObject<funcionarioFiltrado>(EmployeesJsonString);
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao montar o objeto", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+            catch
+            {
+                this.Hide();
+                var erro = new ErroConexao();
+                erro.Closed += (s, args) => this.Close();
+                erro.Show();
+            }
         }
 
         private async void update(string id)

@@ -293,7 +293,7 @@ namespace WindowsFormsApp1
                 else
                 {
                     this.dataGridView1.Columns.Clear();
-                    MessageBox.Show("Falha ao excluir o Funcinário :" + responseMessage.StatusCode);
+                    MessageBox.Show("Falha ao excluir o Funcionário :" + responseMessage.StatusCode);
                 }
 
                 GetAllFuncionarios();
