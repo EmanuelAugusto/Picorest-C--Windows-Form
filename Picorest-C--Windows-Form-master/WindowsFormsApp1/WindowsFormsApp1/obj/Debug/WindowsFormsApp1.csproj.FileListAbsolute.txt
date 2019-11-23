@@ -225,3 +225,4 @@ C:\Users\emanu\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\
 C:\Users\emanu\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
 C:\Users\emanu\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Net.Http.Formatting.xml
 C:\Users\emanu\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ErroConexao.resources

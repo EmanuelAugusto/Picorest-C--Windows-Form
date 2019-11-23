@@ -20,6 +20,8 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            button1.ForeColor = Color.White;
+            button1.BackColor = Color.Blue;
 
         }
 
@@ -35,7 +37,10 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            GetAllFuncionarios();
+            this.dataGridView1.Columns.Clear();
+            button1.ForeColor = Color.White;
+            button1.BackColor = Color.Blue;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -214,13 +219,10 @@ namespace WindowsFormsApp1
             }
             catch
             {
-                if (MessageBox.Show("Erro de conexão com o servidor", "Deseja sair da aplicação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                {
                     this.Hide();
-                    var login = new Login();
-                    login.Closed += (s, args) => this.Close();
-                    login.Show();
-                }
+                    var erro = new ErroConexao();
+                    erro.Closed += (s, args) => this.Close();
+                    erro.Show();
             }
             DataGridViewButtonColumn button = new DataGridViewButtonColumn();
             {
@@ -228,7 +230,8 @@ namespace WindowsFormsApp1
                 button.HeaderText = "APAGAR";
                 button.Text = "APAGAR";
                 button.FlatStyle = FlatStyle.Flat;
-                button.DefaultCellStyle.BackColor = Color.LightCoral;
+                button.DefaultCellStyle.BackColor = Color.Red;
+                button.DefaultCellStyle.ForeColor = Color.White;
                 button.UseColumnTextForButtonValue = true;
                 this.dataGridView1.Columns.Add(button);
             }
@@ -237,6 +240,9 @@ namespace WindowsFormsApp1
                 button2.Name = "EDITAR";
                 button2.HeaderText = "EDITAR";
                 button2.Text = "EDITAR";
+                button2.FlatStyle = FlatStyle.Flat;
+                button2.DefaultCellStyle.BackColor = Color.Blue;
+                button2.DefaultCellStyle.ForeColor = Color.White;
                 button2.UseColumnTextForButtonValue = true;
                 this.dataGridView1.Columns.Add(button2);
             }

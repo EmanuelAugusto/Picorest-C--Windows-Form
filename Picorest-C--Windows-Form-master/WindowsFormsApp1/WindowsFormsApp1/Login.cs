@@ -102,9 +102,11 @@ namespace WindowsFormsApp1
             }
             catch
             {
-                MessageBox.Show("Erro de conexão com o servidor", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Close();
-                
+                this.Hide();
+                var erro = new ErroConexao();
+                erro.Closed += (s, args) => this.Close();
+                erro.Show();
+
             }
         }
     }
