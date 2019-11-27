@@ -75,6 +75,12 @@
     <Compile Include="AdicionarFunção.Designer.cs">
       <DependentUpon>AdicionarFunção.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdicionarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdicionarUsuario.Designer.cs">
+      <DependentUpon>AdicionarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ajuda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,18 @@
     </Compile>
     <Compile Include="AdicionarCursos.Designer.cs">
       <DependentUpon>AdicionarCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="createFuncionarioCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="createFuncionarioCurso.Designer.cs">
+      <DependentUpon>createFuncionarioCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="detalhar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="detalhar.Designer.cs">
+      <DependentUpon>detalhar.cs</DependentUpon>
     </Compile>
     <Compile Include="ErroConexao.cs">
       <SubType>Form</SubType>
@@ -165,6 +183,9 @@
     <EmbeddedResource Include="AdicionarFunção.resx">
       <DependentUpon>AdicionarFunção.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdicionarUsuario.resx">
+      <DependentUpon>AdicionarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ajuda.resx">
       <DependentUpon>Ajuda.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +203,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdicionarCursos.resx">
       <DependentUpon>AdicionarCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="createFuncionarioCurso.resx">
+      <DependentUpon>createFuncionarioCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="detalhar.resx">
+      <DependentUpon>detalhar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ErroConexao.resx">
       <DependentUpon>ErroConexao.cs</DependentUpon>

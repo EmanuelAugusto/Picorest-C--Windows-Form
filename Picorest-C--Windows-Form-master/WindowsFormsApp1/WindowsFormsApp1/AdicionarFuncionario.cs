@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
 {
     public partial class AdicionarFuncionario : Form
     {
+        private const string V = "nome";
         string decide;
         public AdicionarFuncionario(string idAlter)
         {
@@ -278,13 +279,8 @@ namespace WindowsFormsApp1
             string Numero = textBox16.Text;
             string Logradouro = textBox17.Text;
             string Bairro = textBox18.Text;
-            string Cidade = textBox18.Text;
+            string Cidade = textBox19.Text;
             string Uf = textBox2.Text;
-            string Descricao = comboBox2.Text;
-            string Setor = comboBox3.Text;
-            string Nome = textBox1.Text;
-            string Email = textBox4.Text;
-            string Senha = maskedTextBox4.Text;
 
             if(Matricula == "")
             {
@@ -326,66 +322,48 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("O campo UF é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            if (Descricao == "")
-            {
-                MessageBox.Show("O campo Descrição é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            if (Setor == "")
-            {
-                MessageBox.Show("O campo Setor é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            if (Nome == "")
-            {
-                MessageBox.Show("O campo Nome é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            if (Email == "")
-            {
-                MessageBox.Show("O campo Email é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            if (!Email.Contains("@"))
-            {
-                MessageBox.Show("Digite um endereço de E-mail Válido", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            if (Senha == "")
-            {
-                MessageBox.Show("O campo Senha é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
             else
             {
 
                 try
                 {
 
-                    insertEmployeess insert = new insertEmployeess();
-                    insert.matricula = Matricula;
-                    insert.cpf = Cpf;
-                    insert.ctps = Ctps;
-                    insert.admissao = Admissao;
-                    insert.demissao = Demissao;
-                    insert.sexo = Sexo;
-                    insert.numero = Numero;
-                    insert.logradouro = Logradouro;
-                    insert.bairro = Bairro;
-                    insert.cidade = Uf;
-                    insert.nome = Nome;
-                    insert.email = Email;
-                    insert.senha = Senha;
-                    insert.descricao = Descricao;
-                    insert.setor = Setor;
+                    createFuncionario create = new createFuncionario();
+                    create.matricula = Matricula;
+                    create.cpf = Cpf;
+                    create.ctps = Ctps;
+                    create.admissao = Admissao;
+                    create.demissao = Demissao;
+                    create.sexo = Sexo;
+                    create.numero = Numero;
+                    create.logradouro = Logradouro;
+                    create.bairro = Bairro;
+                    create.cidade = Cidade;
+                    create.uf = Uf;
+                    create.usuarioId = "6";
+                    create.setorId = "6";
+                    create.funcaoId = "6";
+
+
 
                     string URL = "http://localhost:3000/funcionarios";
 
                     using (var client = new HttpClient())
                     {
-                        var serializedFuncionario = JsonConvert.SerializeObject(insert);
+                        var serializedFuncionario = JsonConvert.SerializeObject(create);
+                        MessageBox.Show("DEBUG   " + serializedFuncionario);
                         var content = new StringContent(serializedFuncionario, Encoding.UTF8, "application/json");
+                        MessageBox.Show("DEBUG   " + content);
                         var result = await client.PostAsync(URL, content);
+                        MessageBox.Show("DEBUG   " + result);
                     }
                 }
                 catch
                 {
                     MessageBox.Show("Erro de conexão com o servidor", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+
+
             }
 
 
@@ -406,10 +384,15 @@ namespace WindowsFormsApp1
                     {
                         MessageBox.Show("DEBUG    " + await response.Content.ReadAsStringAsync());
                         var FuncionarioJsonString = await response.Content.ReadAsStringAsync();
-                        JsonConvert.DeserializeObject<funcionarioFiltrado[]>(FuncionarioJsonString);
+                        var response1 = Newtonsoft.Json.Linq.JObject.Parse(FuncionarioJsonString);
+
+                       // textBox1.Text = await response.Content.ReadAsStringAsync().id;
+
+
+                        var json = JsonConvert.DeserializeObject<funcionarioFiltrado[]>(FuncionarioJsonString);
 
                         funcionarioFiltrado funcionario = new funcionarioFiltrado();
-                        funcionario.nome = textBox1.Text;
+                        //textBox1.Text = FuncionarioJsonString.nome;
 
                          // var json = JsonConvert.DeserializeObject<funcionarioFiltrado[]>(FuncionarioJsonString).ToList();
                          // LoadEmployees.DataSource = JsonConvert.DeserializeObject<funcionarioFiltrado>(EmployeesJsonString);
@@ -444,11 +427,6 @@ namespace WindowsFormsApp1
             string Bairro = textBox18.Text;
             string Cidade = textBox18.Text;
             string Uf = textBox2.Text;
-            string Descricao = comboBox2.Text;
-            string Setor = comboBox3.Text;
-            string Nome = textBox1.Text;
-            string Email = textBox4.Text;
-            string Senha = maskedTextBox4.Text;
 
             if (Matricula == "")
             {
@@ -490,30 +468,6 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("O campo UF é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            if (Descricao == "")
-            {
-                MessageBox.Show("O campo Descrição é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            if (Setor == "")
-            {
-                MessageBox.Show("O campo Setor é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            if (Nome == "")
-            {
-                MessageBox.Show("O campo Nome é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            if (Email == "")
-            {
-                MessageBox.Show("O campo Email é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            if (!Email.Contains("@"))
-            {
-                MessageBox.Show("Digite um endereço de E-mail Válido", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            if (Senha == "")
-            {
-                MessageBox.Show("O campo Senha é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
             else
             {
 
@@ -531,11 +485,6 @@ namespace WindowsFormsApp1
                     insert.logradouro = Logradouro;
                     insert.bairro = Bairro;
                     insert.cidade = Uf;
-                    insert.nome = Nome;
-                    insert.email = Email;
-                    insert.senha = Senha;
-                    insert.descricao = Descricao;
-                    insert.setor = Setor;
 
                     string URL = "http://localhost:3000/funcionarios";
 

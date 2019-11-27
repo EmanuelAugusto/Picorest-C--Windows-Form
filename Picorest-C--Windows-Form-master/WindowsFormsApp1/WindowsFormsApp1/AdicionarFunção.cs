@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
+using WindowsFormsApp1.Class;
 
 namespace WindowsFormsApp1
 {
@@ -71,21 +75,42 @@ namespace WindowsFormsApp1
         {
 
         }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            insertFunction();
+        }
         private async void insertFunction()
         {
             string Descricao = textBox1.Text;
-            string Cursos = textBox3.Text;
 
             if(Descricao == "")
             {
                 MessageBox.Show("O Campo descrição é obrigatório");
             }
-
-            if (Cursos == "")
+            try
             {
-                MessageBox.Show("O Campo Cursos é obrigatório");
+                string URL = "http://localhost:3000/funcoes";
+
+                createFuncao create = new createFuncao();
+                create.descricao = Descricao;
+
+                using (var client = new HttpClient())
+                {
+                    var serializedFuncao = JsonConvert.SerializeObject(create);
+                    MessageBox.Show("DEBUG   " + serializedFuncao);
+                    var content = new StringContent(serializedFuncao, Encoding.UTF8, "application/json");
+                    MessageBox.Show("DEBUG   " + content);
+                    var result = await client.PostAsync(URL, content);
+                    MessageBox.Show("DEBUG   " + result);
+                }
             }
+            catch
+            {
+
+            }
+
         }
 
+       
     }
 }
