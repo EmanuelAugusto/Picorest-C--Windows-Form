@@ -74,79 +74,16 @@ namespace WindowsFormsApp1.Class
         public string updatedAt { get; set; }
     }
 
-    public class createFuncionarioCurso
+    public class createFuncCurso
     {
         public int id { get; set; }
-        public string nome { get; set; }
-        public string setor { get; set; }
-        public string funcao { get; set; }
-        public string curso { get; set; }
         public string comprovante { get; set; }
+        public string cargaHoraria { get; set; }
+        public string dataInicio { get; set; }
+        public string dataConclusao { get; set; }
+        public string funcionarioId { get; set; }
+        public string cursoId { get; set; }
+        public string createdAt { get; set; }
+        public string updateAt { get; set; }
     }
-
-    public class Usuario
-    {
-        public int id { get; set; }
-        public string nome { get; set; }
-        public string email { get; set; }
-        public string passWorld { get; set; }
-    }
-
-    public class Setor
-    {
-        public int id { get; set; }
-        public string descricao { get; set; }
-    }
-
-    public class Funcao
-    {
-        public int id { get; set; }
-        public string descricao { get; set; }
-    }
-
-    public class RootObject
-    {
-        public int id { get; set; }
-        public string matricula { get; set; }
-        public string cpf { get; set; }
-        public string ctps { get; set; }
-        public object admissao { get; set; }
-        public object demissao { get; set; }
-        public string sexo { get; set; }
-        public string numero { get; set; }
-        public string logradouro { get; set; }
-        public string bairro { get; set; }
-        public string cidade { get; set; }
-        public string uf { get; set; }
-        public Usuario usuario { get; set; }
-        public Setor setor { get; set; }
-        public Funcao funcao { get; set; }
-    }
-
-    public class deleteEmployeess
-    {
-        public string id { get; set; }
-    }
-
-    public class insertEmployeess
-    {
-        public string matricula { get; set; }
-        public string cpf { get; set; }
-        public string ctps { get; set; }
-        public string admissao  { get; set; }
-        public string demissao { get; set; }
-        public string sexo { get; set; }
-        public string numero { get; set; }
-        public string logradouro { get; set; }
-        public string bairro { get; set; }
-        public string cidade { get; set; }
-        public string uf { get; set; }
-        public string nome { get; set; }
-        public string email { get; set; }
-        public string senha { get; set; }
-        public string descricao { get; set; }
-        public string setor { get; set; }
-
-    }
-
 }

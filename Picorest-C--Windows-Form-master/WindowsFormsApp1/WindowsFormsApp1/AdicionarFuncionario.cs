@@ -11,6 +11,8 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using WindowsFormsApp1.Class;
+using Newtonsoft.Json.Linq;
+
 
 namespace WindowsFormsApp1
 {
@@ -25,7 +27,7 @@ namespace WindowsFormsApp1
             //DEBUG
             // MessageBox.Show("id" + idAlter);
             decide = idAlter;
-            MessageBox.Show("DEBUG   " + decide);
+          //  MessageBox.Show("DEBUG   " + decide);
             if(decide != "0") 
             {
                 this.Text = "Atualizar Funcionário";
@@ -264,7 +266,7 @@ namespace WindowsFormsApp1
             else
             {
                 MessageBox.Show("update");
-                update(decide);
+               // update(decide);
             }
         }
 
@@ -382,21 +384,24 @@ namespace WindowsFormsApp1
                     HttpResponseMessage response = await client.GetAsync(URL);
                     if (response.IsSuccessStatusCode)
                     {
-                        MessageBox.Show("DEBUG    " + await response.Content.ReadAsStringAsync());
+                        //MessageBox.Show("DEBUG 1   " + await response.Content.ReadAsStringAsync());
                         var FuncionarioJsonString = await response.Content.ReadAsStringAsync();
-                        var response1 = Newtonsoft.Json.Linq.JObject.Parse(FuncionarioJsonString);
 
-                       // textBox1.Text = await response.Content.ReadAsStringAsync().id;
+                       /* JArray sizes = JArray.Parse(FuncionarioJsonString);
+                        dynamic data = JObject.Parse(sizes[0].ToString());
+                        string data2 = (string)data["nome"];
+                        string data3 = (string)data["setor"];
+                        string data4 = (string)data["funcao"];
+                        textBox10.Text = data2;
+                        textBox13.Text = data3;
+                        textBox14.Text = data4;
+                        */
+                        MessageBox.Show("DEBUG 2   " + FuncionarioJsonString);
+
 
 
                         var json = JsonConvert.DeserializeObject<funcionarioFiltrado[]>(FuncionarioJsonString);
-
-                        funcionarioFiltrado funcionario = new funcionarioFiltrado();
-                        //textBox1.Text = FuncionarioJsonString.nome;
-
-                         // var json = JsonConvert.DeserializeObject<funcionarioFiltrado[]>(FuncionarioJsonString).ToList();
-                         // LoadEmployees.DataSource = JsonConvert.DeserializeObject<funcionarioFiltrado>(EmployeesJsonString);
-
+                       // MessageBox.Show("DEBUG " + json);
 
                     }
                     else
@@ -405,16 +410,17 @@ namespace WindowsFormsApp1
                     }
                 }
             }
-            catch
+            catch(Exception e)
             {
-                this.Hide();
+                MessageBox.Show("DEBUG   " + e);
+              /*  this.Hide();
                 var erro = new ErroConexao();
                 erro.Closed += (s, args) => this.Close();
-                erro.Show();
+                erro.Show();*/
             }
         }
 
-        private async void update(string id)
+      /*  private async void update(string id)
         {
             string Matricula = textBox10.Text;
             string Cpf = maskedTextBox1.Text;
@@ -508,7 +514,7 @@ namespace WindowsFormsApp1
             };
 
         }
-
+        */
        
     }
 }
