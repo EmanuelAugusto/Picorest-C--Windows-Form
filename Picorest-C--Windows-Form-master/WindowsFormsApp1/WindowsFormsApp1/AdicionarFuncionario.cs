@@ -20,10 +20,12 @@ namespace WindowsFormsApp1
     {
         private const string V = "nome";
         string decide;
+        
         public AdicionarFuncionario(string idAlter)
         {
 
             InitializeComponent();
+            this.Show();
             //DEBUG
             // MessageBox.Show("id" + idAlter);
             decide = idAlter;
@@ -342,9 +344,9 @@ namespace WindowsFormsApp1
                     create.bairro = Bairro;
                     create.cidade = Cidade;
                     create.uf = Uf;
-                    create.usuarioId = "6";
-                    create.setorId = "6";
-                    create.funcaoId = "6";
+                    create.usuarioId = "5";
+                    create.setorId = "5";
+                    create.funcaoId = "5";
 
 
 
@@ -379,29 +381,41 @@ namespace WindowsFormsApp1
 
                 using (var client = new HttpClient())
                 {
-                    //BindingSource LoadEmployees = new BindingSource();
 
                     HttpResponseMessage response = await client.GetAsync(URL);
                     if (response.IsSuccessStatusCode)
                     {
-                        //MessageBox.Show("DEBUG 1   " + await response.Content.ReadAsStringAsync());
+                       // MessageBox.Show("DEBUG 1   " + await response.Content.ReadAsStringAsync());
                         var FuncionarioJsonString = await response.Content.ReadAsStringAsync();
 
-                       /* JArray sizes = JArray.Parse(FuncionarioJsonString);
+                        JArray sizes = JArray.Parse(FuncionarioJsonString);
                         dynamic data = JObject.Parse(sizes[0].ToString());
-                        string data2 = (string)data["nome"];
-                        string data3 = (string)data["setor"];
-                        string data4 = (string)data["funcao"];
-                        textBox10.Text = data2;
-                        textBox13.Text = data3;
-                        textBox14.Text = data4;
-                        */
-                        MessageBox.Show("DEBUG 2   " + FuncionarioJsonString);
+                        string data2 = (string)data["matricula"];
+                        string data3 = (string)data["cpf"];
+                        string data4 = (string)data["ctps"];
+                        string data5 = (string)data["admissao"];
+                        string data6 = (string)data["demissao"];
+                        string data7 = (string)data["sexo"];
+                        string data8 = (string)data["numero"];
+                        string data9 = (string)data["logradouro"];
+                        string data10 = (string)data["bairro"];
+                        string data11 = (string)data["cidade"];
+                        string data12 = (string)data["uf"];
 
+                        textBox10.Text = data2;
+                        maskedTextBox1.Text = data3;
+                        textBox13.Text = data4;
+                        textBox14.Text = data5;
+                        textBox15.Text = data6;
+                        comboBox1.Text = data7;
+                        textBox16.Text = data8;
+                        textBox17.Text = data9;
+                        textBox18.Text = data10;
+                        textBox19.Text = data11;
+                        textBox2.Text = data12;
 
 
                         var json = JsonConvert.DeserializeObject<funcionarioFiltrado[]>(FuncionarioJsonString);
-                       // MessageBox.Show("DEBUG " + json);
 
                     }
                     else
@@ -412,11 +426,11 @@ namespace WindowsFormsApp1
             }
             catch(Exception e)
             {
-                MessageBox.Show("DEBUG   " + e);
-              /*  this.Hide();
+                //MessageBox.Show("DEBUG   " + e);
+                this.Hide();
                 var erro = new ErroConexao();
                 erro.Closed += (s, args) => this.Close();
-                erro.Show();*/
+                erro.Show();
             }
         }
 

@@ -12,6 +12,8 @@ using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using WindowsFormsApp1.Class;
 using System.Web;
+using Newtonsoft.Json.Linq;
+
 
 namespace WindowsFormsApp1
 {
@@ -20,6 +22,7 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            GetLoginName("2");
             button1.ForeColor = Color.White;
             button1.BackColor = Color.Blue;
 
@@ -114,6 +117,10 @@ namespace WindowsFormsApp1
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }
@@ -264,7 +271,7 @@ namespace WindowsFormsApp1
             if (e.ColumnIndex == 6) //make sure button index here
             {
                 string value= dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
-                MessageBox.Show("DEBUG   " + value);
+                //MessageBox.Show("DEBUG   " + value);
                 DialogResult dialogResult = MessageBox.Show("Deseja realmente apagar este funcionário?", "AVISO", MessageBoxButtons.YesNo ,MessageBoxIcon.Question);
 
                 if (dialogResult  == DialogResult.Yes)
@@ -275,15 +282,15 @@ namespace WindowsFormsApp1
             if (e.ColumnIndex == 7)
             {
                 string value = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
-                MessageBox.Show("DEBUG   " + value);
-                AdicionarFuncionario adicionar = new AdicionarFuncionario(value);
-                adicionar.ShowDialog();
+                //MessageBox.Show("DEBUG   " + value);
+                Editar editar = new Editar(value);
+                editar.ShowDialog();
             }
 
             if(e.ColumnIndex == 8)
             {
                 string value = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
-                MessageBox.Show("DEBUG   " + value);
+                //MessageBox.Show("DEBUG   " + value);
                 detalhar Detalhar = new detalhar(value);
                 Detalhar.ShowDialog();
             }
@@ -319,6 +326,47 @@ namespace WindowsFormsApp1
             }
 
         }
-       
+
+        private async void GetLoginName(string id)
+        {
+            try
+            {
+                string URL = "http://localhost:3000/usuarios/" + id.ToString();
+
+                using (var client = new HttpClient())
+                {
+
+                    HttpResponseMessage response = await client.GetAsync(URL);
+                    if (response.IsSuccessStatusCode)
+                    {
+                       // MessageBox.Show("DEBUG 1   " + await response.Content.ReadAsStringAsync());
+                        var FuncionarioJsonString = await response.Content.ReadAsStringAsync();
+
+                       JArray sizes = JArray.Parse(FuncionarioJsonString);
+                       dynamic data = JObject.Parse(sizes[0].ToString());
+                       string data2 = (string)data["nome"];
+
+                        label1.Text = data2;
+
+                     
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao montar o objeto", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("DEBUG   " + e);
+                //this.Hide();
+               // var erro = new ErroConexao();
+               // erro.Closed += (s, args) => this.Close();
+               // erro.Show();
+            }
+        }
+
+        
     }
 }

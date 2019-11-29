@@ -92,5 +92,9 @@ namespace WindowsFormsApp1
 
         }
 
+        private void AdicionarCursos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

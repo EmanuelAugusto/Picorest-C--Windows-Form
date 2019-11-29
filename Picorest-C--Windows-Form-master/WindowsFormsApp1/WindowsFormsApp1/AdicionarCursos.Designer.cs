@@ -243,6 +243,7 @@
             this.Location = new System.Drawing.Point(22, 12);
             this.Name = "AdicionarCursos";
             this.Text = "Adicionar curso";
+            this.Load += new System.EventHandler(this.AdicionarCursos_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
