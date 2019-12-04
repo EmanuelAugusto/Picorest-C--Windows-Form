@@ -86,4 +86,56 @@ namespace WindowsFormsApp1.Class
         public string createdAt { get; set; }
         public string updateAt { get; set; }
     }
+
+    public class getAllSetores
+    {
+        [DisplayName("ID")]
+        public int id { get; set; }
+
+        [DisplayName("DESCRIÇÃO")]
+        public string descricao { get; set; }
+       
+    }
+
+    public class getAllFuncoes
+    {
+        [DisplayName("ID")]
+        public int id { get; set; }
+
+        [DisplayName("DESCRIÇÃO")]
+        public string descricao { get; set; }
+      
+    }
+
+    public class getAllCursos
+    {
+        [DisplayName("ID")]
+        public int id { get; set; }
+
+        [DisplayName("DESCRIÇÃO")]
+        public string descricao { get; set; }
+
+        [DisplayName("CARGA HORÁRIA")]
+        public object cargaHoraria { get; set; }
+
+        [DisplayName("DATA DE INÍCIO")]
+        public object dataInicio { get; set; }
+
+        [DisplayName("DATA DE CONCLUSÃO")]
+        public object dataConclusao { get; set; }
+        
+    }
+
+    public class getAllUsuarios
+    {
+        [DisplayName("ID")]
+        public int id { get; set; }
+
+        [DisplayName("NOME")]
+        public string nome { get; set; }
+
+        [DisplayName("EMAIL")]
+        public string email { get; set; }
+        //public string passWorld { get; set; }
+    }
 }

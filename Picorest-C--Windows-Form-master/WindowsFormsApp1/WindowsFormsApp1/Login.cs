@@ -11,6 +11,8 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using WindowsFormsApp1.Class;
+using System.Web;
+using Newtonsoft.Json.Linq;
 
 
 namespace WindowsFormsApp1
@@ -99,6 +101,30 @@ namespace WindowsFormsApp1
                         }
                     }
                 }
+
+                string URL2 = "http://localhost:3000/usuarios";
+
+                using (var client2 = new HttpClient())
+                {
+                    HttpResponseMessage response2 = await client2.GetAsync(URL2);
+
+                    if (response2.IsSuccessStatusCode)
+                    {
+                        var logins = await response2.Content.ReadAsStringAsync();
+
+                        MessageBox.Show("DEBUG  " + logins);
+
+                        /*JArray sizes = JArray.Parse(logins);
+                        dynamic data = JObject.Parse(sizes[0].ToString());
+
+                        for(var i = 0; i < data.length; i++)
+                        {
+                            data = (string)data["nome"][i];
+                            
+                        }
+                        MessageBox.Show("DEBUG" + data);*/
+                    }
+                }
             }
             catch
             {
@@ -108,6 +134,14 @@ namespace WindowsFormsApp1
                 erro.Show();
 
             }
+        }
+
+
+        private async void LoginUser()
+        {
+            string URL = "http:localhost:3000/authUser";
+
+
         }
     }
 }

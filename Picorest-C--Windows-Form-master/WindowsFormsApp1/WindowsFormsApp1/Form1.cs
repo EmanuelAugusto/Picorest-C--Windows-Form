@@ -25,6 +25,7 @@ namespace WindowsFormsApp1
             GetLoginName("2");
             button1.ForeColor = Color.White;
             button1.BackColor = Color.Blue;
+           // button1.Width = 800;
 
         }
 
@@ -44,6 +45,15 @@ namespace WindowsFormsApp1
             this.dataGridView1.Columns.Clear();
             button1.ForeColor = Color.White;
             button1.BackColor = Color.Blue;
+
+            button2.BackColor = Color.LightGray;
+            button2.ForeColor = Color.Black;
+            button3.BackColor = Color.LightGray;
+            button3.ForeColor = Color.Black;
+            button4.BackColor = Color.LightGray;
+            button4.ForeColor = Color.Black;
+            button8.BackColor = Color.LightGray;
+            button8.ForeColor = Color.Black;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -367,6 +377,336 @@ namespace WindowsFormsApp1
             }
         }
 
-        
+        private async void GetAllSetor()
+        {
+            this.dataGridView1.Columns.Clear();
+            try
+            {
+                string URL = "http://localhost:3000/setores";
+
+                using (var client = new HttpClient())
+                {
+                    using (var response = await client.GetAsync(URL))
+                    {
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var SetoresJsonString = await response.Content.ReadAsStringAsync();
+                            //MessageBox.Show("DEBUG   " + SetoresJsonString);
+                            textBox1.Text = await response.Content.ReadAsStringAsync();
+                            dataGridView1.DataSource = JsonConvert.DeserializeObject<getAllSetores[]>(SetoresJsonString).ToList();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Não foi possivel conectar a base de dados" + response.StatusCode);
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                this.Hide();
+                var erro = new ErroConexao();
+                erro.Closed += (s, args) => this.Close();
+                erro.Show();
+            }
+            
+            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+            {
+                button.Name = "APAGAR";
+                button.HeaderText = "APAGAR";
+                button.Text = "APAGAR";
+                button.FlatStyle = FlatStyle.Flat;
+                button.DefaultCellStyle.BackColor = Color.Red;
+                button.DefaultCellStyle.ForeColor = Color.White;
+                button.UseColumnTextForButtonValue = true;
+                this.dataGridView1.Columns.Add(button);
+            }
+            DataGridViewButtonColumn button2 = new DataGridViewButtonColumn();
+            {
+                button2.Name = "EDITAR";
+                button2.HeaderText = "EDITAR";
+                button2.Text = "EDITAR";
+                button2.FlatStyle = FlatStyle.Flat;
+                button2.DefaultCellStyle.BackColor = Color.Blue;
+                button2.DefaultCellStyle.ForeColor = Color.White;
+                button2.UseColumnTextForButtonValue = true;
+                this.dataGridView1.Columns.Add(button2);
+            }
+            DataGridViewButtonColumn button3 = new DataGridViewButtonColumn();
+            {
+                button3.Name = "DETALHAR";
+                button3.HeaderText = "DETALHAR";
+                button3.Text = "DETALHAR";
+                button3.FlatStyle = FlatStyle.Flat;
+                button3.DefaultCellStyle.BackColor = Color.Blue;
+                button3.DefaultCellStyle.ForeColor = Color.White;
+                button3.UseColumnTextForButtonValue = true;
+                this.dataGridView1.Columns.Add(button3);
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            button2.ForeColor = Color.White;
+            button2.BackColor = Color.Blue;
+            GetAllSetor();
+            button1.BackColor = Color.LightGray;
+            button1.ForeColor = Color.Black;
+            button3.BackColor = Color.LightGray;
+            button3.ForeColor = Color.Black;
+            button4.BackColor = Color.LightGray;
+            button4.ForeColor = Color.Black;
+            button8.BackColor = Color.LightGray;
+            button8.ForeColor = Color.Black;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            button3.ForeColor = Color.White;
+            button3.BackColor = Color.Blue;
+            GetAllFuncoes();
+            button1.BackColor = Color.LightGray;
+            button1.ForeColor = Color.Black;
+            button2.BackColor = Color.LightGray;
+            button2.ForeColor = Color.Black;
+            button4.BackColor = Color.LightGray;
+            button4.ForeColor = Color.Black;
+            button8.BackColor = Color.LightGray;
+            button8.ForeColor = Color.Black;
+        }
+        private async void GetAllFuncoes()
+        {
+            this.dataGridView1.Columns.Clear();
+            try
+            {
+                string URL = "http://localhost:3000/funcoes";
+
+                using (var client = new HttpClient())
+                {
+                    using (var response = await client.GetAsync(URL))
+                    {
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var funcoesJsonString = await response.Content.ReadAsStringAsync();
+                           // MessageBox.Show("DEBUG   " + funcoesJsonString);
+                            textBox1.Text = await response.Content.ReadAsStringAsync();
+                            dataGridView1.DataSource = JsonConvert.DeserializeObject<getAllFuncoes[]>(funcoesJsonString).ToList();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Não foi possivel conectar a base de dados" + response.StatusCode);
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                this.Hide();
+                var erro = new ErroConexao();
+                erro.Closed += (s, args) => this.Close();
+                erro.Show();
+            }
+            
+            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+            {
+                button.Name = "APAGAR";
+                button.HeaderText = "APAGAR";
+                button.Text = "APAGAR";
+                button.FlatStyle = FlatStyle.Flat;
+                button.DefaultCellStyle.BackColor = Color.Red;
+                button.DefaultCellStyle.ForeColor = Color.White;
+                button.UseColumnTextForButtonValue = true;
+                this.dataGridView1.Columns.Add(button);
+            }
+            DataGridViewButtonColumn button2 = new DataGridViewButtonColumn();
+            {
+                button2.Name = "EDITAR";
+                button2.HeaderText = "EDITAR";
+                button2.Text = "EDITAR";
+                button2.FlatStyle = FlatStyle.Flat;
+                button2.DefaultCellStyle.BackColor = Color.Blue;
+                button2.DefaultCellStyle.ForeColor = Color.White;
+                button2.UseColumnTextForButtonValue = true;
+                this.dataGridView1.Columns.Add(button2);
+            }
+            DataGridViewButtonColumn button3 = new DataGridViewButtonColumn();
+            {
+                button3.Name = "DETALHAR";
+                button3.HeaderText = "DETALHAR";
+                button3.Text = "DETALHAR";
+                button3.FlatStyle = FlatStyle.Flat;
+                button3.DefaultCellStyle.BackColor = Color.Blue;
+                button3.DefaultCellStyle.ForeColor = Color.White;
+                button3.UseColumnTextForButtonValue = true;
+                this.dataGridView1.Columns.Add(button3);
+            }
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            button4.ForeColor = Color.White;
+            button4.BackColor = Color.Blue;
+            GetAllCursos();
+            button2.BackColor = Color.LightGray;
+            button2.ForeColor = Color.Black;
+            button3.BackColor = Color.LightGray;
+            button3.ForeColor = Color.Black;
+            button1.BackColor = Color.LightGray;
+            button1.ForeColor = Color.Black;
+            button8.BackColor = Color.LightGray;
+            button8.ForeColor = Color.Black;
+        }
+
+        private async void GetAllCursos()
+        {
+            this.dataGridView1.Columns.Clear();
+            try
+            {
+                string URL = "http://localhost:3000/cursos";
+
+                using (var client = new HttpClient())
+                {
+                    using (var response = await client.GetAsync(URL))
+                    {
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var cursosJsonString = await response.Content.ReadAsStringAsync();
+                            //MessageBox.Show("DEBUG   " + cursosJsonString);
+                            textBox1.Text = await response.Content.ReadAsStringAsync();
+                            dataGridView1.DataSource = JsonConvert.DeserializeObject<getAllCursos[]>(cursosJsonString).ToList();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Não foi possivel conectar a base de dados" + response.StatusCode);
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                this.Hide();
+                var erro = new ErroConexao();
+                erro.Closed += (s, args) => this.Close();
+                erro.Show();
+            }
+            
+            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+            {
+                button.Name = "APAGAR";
+                button.HeaderText = "APAGAR";
+                button.Text = "APAGAR";
+                button.FlatStyle = FlatStyle.Flat;
+                button.DefaultCellStyle.BackColor = Color.Red;
+                button.DefaultCellStyle.ForeColor = Color.White;
+                button.UseColumnTextForButtonValue = true;
+                this.dataGridView1.Columns.Add(button);
+            }
+            DataGridViewButtonColumn button2 = new DataGridViewButtonColumn();
+            {
+                button2.Name = "EDITAR";
+                button2.HeaderText = "EDITAR";
+                button2.Text = "EDITAR";
+                button2.FlatStyle = FlatStyle.Flat;
+                button2.DefaultCellStyle.BackColor = Color.Blue;
+                button2.DefaultCellStyle.ForeColor = Color.White;
+                button2.UseColumnTextForButtonValue = true;
+                this.dataGridView1.Columns.Add(button2);
+            }
+            DataGridViewButtonColumn button3 = new DataGridViewButtonColumn();
+            {
+                button3.Name = "DETALHAR";
+                button3.HeaderText = "DETALHAR";
+                button3.Text = "DETALHAR";
+                button3.FlatStyle = FlatStyle.Flat;
+                button3.DefaultCellStyle.BackColor = Color.Blue;
+                button3.DefaultCellStyle.ForeColor = Color.White;
+                button3.UseColumnTextForButtonValue = true;
+                this.dataGridView1.Columns.Add(button3);
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            button8.ForeColor = Color.White;
+            button8.BackColor = Color.Blue;
+            GetAllusuarios();
+            button2.BackColor = Color.LightGray;
+            button2.ForeColor = Color.Black;
+            button3.BackColor = Color.LightGray;
+            button3.ForeColor = Color.Black;
+            button4.BackColor = Color.LightGray;
+            button4.ForeColor = Color.Black;
+            button1.BackColor = Color.LightGray;
+            button1.ForeColor = Color.Black;
+        }
+
+        private async void GetAllusuarios()
+        {
+            this.dataGridView1.Columns.Clear();
+            try
+            {
+                string URL = "http://localhost:3000/usuarios";
+
+                using (var client = new HttpClient())
+                {
+                    using (var response = await client.GetAsync(URL))
+                    {
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var usuariosJsonString = await response.Content.ReadAsStringAsync();
+                            // MessageBox.Show("DEBUG   " + funcoesJsonString);
+                            textBox1.Text = await response.Content.ReadAsStringAsync();
+                            dataGridView1.DataSource = JsonConvert.DeserializeObject<getAllUsuarios[]>(usuariosJsonString).ToList();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Não foi possivel conectar a base de dados" + response.StatusCode);
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                this.Hide();
+                var erro = new ErroConexao();
+                erro.Closed += (s, args) => this.Close();
+                erro.Show();
+            }
+            
+            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+            {
+                button.Name = "APAGAR";
+                button.HeaderText = "APAGAR";
+                button.Text = "APAGAR";
+                button.FlatStyle = FlatStyle.Flat;
+                button.DefaultCellStyle.BackColor = Color.Red;
+                button.DefaultCellStyle.ForeColor = Color.White;
+                button.UseColumnTextForButtonValue = true;
+                this.dataGridView1.Columns.Add(button);
+            }
+            DataGridViewButtonColumn button2 = new DataGridViewButtonColumn();
+            {
+                button2.Name = "EDITAR";
+                button2.HeaderText = "EDITAR";
+                button2.Text = "EDITAR";
+                button2.FlatStyle = FlatStyle.Flat;
+                button2.DefaultCellStyle.BackColor = Color.Blue;
+                button2.DefaultCellStyle.ForeColor = Color.White;
+                button2.UseColumnTextForButtonValue = true;
+                this.dataGridView1.Columns.Add(button2);
+            }
+            DataGridViewButtonColumn button3 = new DataGridViewButtonColumn();
+            {
+                button3.Name = "DETALHAR";
+                button3.HeaderText = "DETALHAR";
+                button3.Text = "DETALHAR";
+                button3.FlatStyle = FlatStyle.Flat;
+                button3.DefaultCellStyle.BackColor = Color.Blue;
+                button3.DefaultCellStyle.ForeColor = Color.White;
+                button3.UseColumnTextForButtonValue = true;
+                this.dataGridView1.Columns.Add(button3);
+            }
+        }
     }
 }

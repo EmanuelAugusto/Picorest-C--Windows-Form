@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             var adicionarcurso = new AdicionarCursos();
             adicionarcurso.Closed += (s, args) => this.Close();
             adicionarcurso.Show();
@@ -45,7 +45,7 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             var adicionarsetor = new AdicionarSetor();
             adicionarsetor.Closed += (s, args) => this.Close();
             adicionarsetor.Show();
@@ -53,7 +53,7 @@ namespace WindowsFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             var adicionarfuncao = new AdicionarFunção();
             adicionarfuncao.Closed += (s, args) => this.Close();
             adicionarfuncao.Show();
@@ -66,7 +66,7 @@ namespace WindowsFormsApp1
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             var adicionarusuario = new AdicionarUsuario();
             adicionarusuario.Closed += (s, args) => this.Close();
             adicionarusuario.Show();
