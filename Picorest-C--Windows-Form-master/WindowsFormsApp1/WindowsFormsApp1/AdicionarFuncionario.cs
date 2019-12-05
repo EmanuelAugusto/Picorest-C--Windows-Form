@@ -262,13 +262,13 @@ namespace WindowsFormsApp1
         {
             if (decide == "0")
             {
-                MessageBox.Show("insert");
+               // MessageBox.Show("insert");
                 insert();
             }
             else
             {
-                MessageBox.Show("update");
-               // update(decide);
+              //  MessageBox.Show("update");
+                update(decide);
             }
         }
 
@@ -355,11 +355,11 @@ namespace WindowsFormsApp1
                     using (var client = new HttpClient())
                     {
                         var serializedFuncionario = JsonConvert.SerializeObject(create);
-                        MessageBox.Show("DEBUG   " + serializedFuncionario);
+                      //  MessageBox.Show("DEBUG   " + serializedFuncionario);
                         var content = new StringContent(serializedFuncionario, Encoding.UTF8, "application/json");
-                        MessageBox.Show("DEBUG   " + content);
+                      //  MessageBox.Show("DEBUG   " + content);
                         var result = await client.PostAsync(URL, content);
-                        MessageBox.Show("DEBUG   " + result);
+                      //  MessageBox.Show("DEBUG   " + result);
                     }
                 }
                 catch
@@ -434,8 +434,9 @@ namespace WindowsFormsApp1
             }
         }
 
-      /*  private async void update(string id)
+       private async void update(string id)
         {
+           // MessageBox.Show("DEBUG   " + id);
             string Matricula = textBox10.Text;
             string Cpf = maskedTextBox1.Text;
             string Ctps = textBox13.Text;
@@ -494,30 +495,39 @@ namespace WindowsFormsApp1
                 try
                 {
 
-                    insertEmployeess insert = new insertEmployeess();
-                    insert.matricula = Matricula;
-                    insert.cpf = Cpf;
-                    insert.ctps = Ctps;
-                    insert.admissao = Admissao;
-                    insert.demissao = Demissao;
-                    insert.sexo = Sexo;
-                    insert.numero = Numero;
-                    insert.logradouro = Logradouro;
-                    insert.bairro = Bairro;
-                    insert.cidade = Uf;
+
+                    createFuncionario update = new createFuncionario();
+                    update.matricula = Matricula;
+                    update.cpf = Cpf;
+                    update.ctps = Ctps;
+                    update.admissao = Admissao;
+                    update.demissao = Demissao;
+                    update.sexo = Sexo;
+                    update.numero = Numero;
+                    update.logradouro = Logradouro;
+                    update.bairro = Bairro;
+                    update.cidade = Cidade;
+                    update.uf = Uf;
+                    update.usuarioId = "5";
+                    update.setorId = "5";
+                    update.funcaoId = "5";
+
+
 
                     string URL = "http://localhost:3000/funcionarios";
 
                     using (var client = new HttpClient())
                     {
-                        HttpResponseMessage responseMessage = await client.PutAsJsonAsync(URL + "/" + id , insert);
+                        HttpResponseMessage responseMessage = await client.PutAsJsonAsync(URL + "/" + id , update);
+                      //  MessageBox.Show("DEBUG   " + client);
+
                         if (responseMessage.IsSuccessStatusCode)
                         {
                             MessageBox.Show("Funcionário Alterado com suceso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Hide();
-                            var home = new Form1();
-                            home.Closed += (s, args) => this.Close();
-                            home.Show();
+                          //  this.Hide();
+                          //  var home = new Form1();
+                          //  home.Closed += (s, args) => this.Close();
+                          //  home.Show();
                         }
                     }
                 }
@@ -528,7 +538,7 @@ namespace WindowsFormsApp1
             };
 
         }
-        */
+        
        
     }
 }

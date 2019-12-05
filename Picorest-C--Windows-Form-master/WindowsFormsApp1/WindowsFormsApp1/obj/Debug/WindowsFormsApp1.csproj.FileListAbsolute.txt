@@ -230,3 +230,4 @@ C:\Users\emanu\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\
 C:\Users\emanu\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarUsuario.resources
 C:\Users\emanu\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.createFuncionarioCurso.resources
 C:\Users\emanu\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Editar.resources
+C:\Users\emanu\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Debug.resources

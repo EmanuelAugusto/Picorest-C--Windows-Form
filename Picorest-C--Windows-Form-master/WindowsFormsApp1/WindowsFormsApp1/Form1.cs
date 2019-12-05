@@ -224,6 +224,9 @@ namespace WindowsFormsApp1
                         if (response.IsSuccessStatusCode)
                         {
                             var FuncionarioJsonString = await response.Content.ReadAsStringAsync();
+
+                            Debug debug = new Debug(FuncionarioJsonString);
+                            debug.Show();
                             textBox1.Text = await response.Content.ReadAsStringAsync();
                             dataGridView1.DataSource = JsonConvert.DeserializeObject<funcionarioFiltrado[]>(FuncionarioJsonString).ToList();
                         }
