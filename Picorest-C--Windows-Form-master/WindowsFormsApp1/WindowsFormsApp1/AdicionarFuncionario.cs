@@ -379,11 +379,23 @@ namespace WindowsFormsApp1
                     using (var client = new HttpClient())
                     {
                        var serializedFuncionario = JsonConvert.SerializeObject(create);
-                       MessageBox.Show("DEBUG   " + serializedFuncionario);
+                       //MessageBox.Show("DEBUG   " + serializedFuncionario);
                        var content = new StringContent(serializedFuncionario, Encoding.UTF8, "application/json");
-                       MessageBox.Show("DEBUG   " + content);
+                       //MessageBox.Show("DEBUG   " + content);
                        var result = await client.PostAsync(URL, content);
-                       MessageBox.Show("DEBUG   " + result);
+                      // MessageBox.Show("DEBUG   " + result);
+
+                        if (result.IsSuccessStatusCode)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Funcionário Cadastrado com sucesso", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Question);
+
+                            if (dialogResult == DialogResult.OK)
+                            {
+                                this.Close();
+
+
+                            }
+                        }
                     }
                 }
                 catch

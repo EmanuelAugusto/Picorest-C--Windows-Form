@@ -117,8 +117,8 @@ namespace WindowsFormsApp1
 
         private void button10_Click(object sender, EventArgs e)
         {
-            AdicionarFuncionario insert = new AdicionarFuncionario("0");
-            insert.Show();
+            adicionar insert = new adicionar();
+            insert.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)

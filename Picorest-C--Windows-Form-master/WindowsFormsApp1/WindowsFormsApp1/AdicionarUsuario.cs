@@ -82,11 +82,22 @@ namespace WindowsFormsApp1
                 using (var client = new HttpClient())
                 {
                     var serializedUsuario = JsonConvert.SerializeObject(create);
-                    MessageBox.Show("DEBUG   " + serializedUsuario);
+                    //MessageBox.Show("DEBUG   " + serializedUsuario);
                     var content = new StringContent(serializedUsuario, Encoding.UTF8, "application/json");
-                    MessageBox.Show("DEBUG   " + content);
+                    //MessageBox.Show("DEBUG   " + content);
                     var result = await client.PostAsync(URL, content);
-                    MessageBox.Show("DEBUG   " + result);
+                    //MessageBox.Show("DEBUG   " + result);
+
+                    if (result.IsSuccessStatusCode)
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Funcionário Cadastrado com sucesso", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Question);
+
+                        if (dialogResult == DialogResult.OK)
+                        {
+                            this.Close();
+
+                        }
+                    }
                 }
 
             }
@@ -98,6 +109,11 @@ namespace WindowsFormsApp1
                 erro.Show();
             }
 
+
+        }
+
+        private void AdicionarUsuario_Load(object sender, EventArgs e)
+        {
 
         }
     }

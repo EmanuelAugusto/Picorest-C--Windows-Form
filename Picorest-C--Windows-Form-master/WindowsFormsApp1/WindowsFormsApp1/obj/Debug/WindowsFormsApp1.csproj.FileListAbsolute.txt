@@ -265,3 +265,4 @@ C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-ma
 C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
 C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Picorest - Contatos.exe
 C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Picorest - Contatos.pdb
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.adicionar.resources

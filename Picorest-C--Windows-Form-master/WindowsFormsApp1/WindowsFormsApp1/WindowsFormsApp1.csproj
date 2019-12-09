@@ -63,6 +63,12 @@
     <Compile Include="AcessibilidadeDoTeclado.Designer.cs">
       <DependentUpon>AcessibilidadeDoTeclado.cs</DependentUpon>
     </Compile>
+    <Compile Include="adicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adicionar.Designer.cs">
+      <DependentUpon>adicionar.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdicionarFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </Compile>
     <EmbeddedResource Include="AcessibilidadeDoTeclado.resx">
       <DependentUpon>AcessibilidadeDoTeclado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adicionar.resx">
+      <DependentUpon>adicionar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdicionarFuncionario.resx">
       <DependentUpon>AdicionarFuncionario.cs</DependentUpon>

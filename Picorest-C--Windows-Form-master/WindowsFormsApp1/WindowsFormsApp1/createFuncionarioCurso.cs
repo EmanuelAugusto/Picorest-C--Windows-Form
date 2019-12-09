@@ -89,8 +89,8 @@ namespace WindowsFormsApp1
                     create.cargaHoraria = CargaHoraria;
                     create.dataInicio = DataInicio;
                     create.dataConclusao = DataConclusao;
-                    string newIdfunction = Funcionarioid.Substring(0, 1);
-                    string newIdSector = FuncionarioCursoId.Substring(0, 1);
+                    string newIdfunction = Funcionarioid.Substring(0, 2);
+                    string newIdSector = FuncionarioCursoId.Substring(0, 2);
                     create.funcionarioId = newIdfunction;
                     create.cursoId = newIdSector;
 
@@ -102,6 +102,17 @@ namespace WindowsFormsApp1
                         MessageBox.Show("DEBUG   " + content);
                         var result = await client.PostAsync(URL, content);
                         MessageBox.Show("DEBUG   " + result);
+                        if (result.IsSuccessStatusCode)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Funcionário Cadastrado com sucesso", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Question);
+
+                            if (dialogResult == DialogResult.OK)
+                            {
+                                this.Close();
+                                
+
+                            }
+                        }
                     }
                 }
                 catch
@@ -116,7 +127,7 @@ namespace WindowsFormsApp1
         {
             try
             {
-                string URL = "http://localhost:3000/funcionarioCursos";
+                string URL = "http://localhost:3000/funcionarios";
 
                 using (var client = new HttpClient())
                 {
@@ -138,7 +149,7 @@ namespace WindowsFormsApp1
                             string Text1 = sizes[i]["nome"].ToString();
                             string Text2 = sizes[i]["id"].ToString();
                             // comboBox2.ValueMember = Text2;
-                            comboBox1.Items.Add(Text2 + " " + Text1);
+                            comboBox1.Items.Add(Text2 + "   " + Text1);
                         }
                     }
                 }
