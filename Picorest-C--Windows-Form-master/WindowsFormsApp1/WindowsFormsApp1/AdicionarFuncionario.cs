@@ -20,6 +20,12 @@ namespace WindowsFormsApp1
     {
         private const string V = "nome";
         string decide;
+
+        string findId;
+
+        string nomeUser;
+
+      //  string jsonId;
         
         public AdicionarFuncionario(string idAlter)
         {
@@ -29,8 +35,9 @@ namespace WindowsFormsApp1
             //DEBUG
             // MessageBox.Show("id" + idAlter);
             decide = idAlter;
+         
           //  MessageBox.Show("DEBUG   " + decide);
-            if(decide != "0") 
+            if (decide != "0") 
             {
                 this.Text = "Atualizar Funcionário";
                 GetEmployeesId(decide);
@@ -40,6 +47,9 @@ namespace WindowsFormsApp1
             {
 
                 this.Text = "Adicionar Funcionário";
+                GetAllFunctions();
+                GetAllUsers();
+                GetAllsetores();
             }
 
         }
@@ -175,7 +185,9 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            nomeUser = comboBox2.Text;
             insertOrUpdate();
+           // getIdOfUsers(nomeUser);
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -274,6 +286,10 @@ namespace WindowsFormsApp1
 
         private async void insert()
         {
+
+            MessageBox.Show("DEBUG  " + comboBox2.Text);
+
+           // getIdOfUsers(findId);
             string Matricula = textBox10.Text;
             string Cpf = maskedTextBox1.Text;
             string Ctps = textBox13.Text;
@@ -285,8 +301,16 @@ namespace WindowsFormsApp1
             string Bairro = textBox18.Text;
             string Cidade = textBox19.Text;
             string Uf = textBox2.Text;
+            string Usuario = comboBox2.Text;
+            string Funcao = comboBox3.Text;
+            string Setor = comboBox4.Text;
+            string newIdUSer = Usuario.Substring(0, 1);
+            string newIdfunction = Funcao.Substring(0, 1);
+            string newIdSector = Setor.Substring(0, 1);
+           // Debug debug = new Debug(newIdUSer.ToString());
+           // debug.Show();
 
-            if(Matricula == "")
+            if (Matricula == "")
             {
                 MessageBox.Show("O campo matrícula é obrigatório", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -344,9 +368,9 @@ namespace WindowsFormsApp1
                     create.bairro = Bairro;
                     create.cidade = Cidade;
                     create.uf = Uf;
-                    create.usuarioId = "5";
-                    create.setorId = "5";
-                    create.funcaoId = "5";
+                    create.usuarioId = newIdUSer;                 
+                    create.setorId = newIdSector;
+                    create.funcaoId = newIdfunction;
 
 
 
@@ -354,12 +378,12 @@ namespace WindowsFormsApp1
 
                     using (var client = new HttpClient())
                     {
-                        var serializedFuncionario = JsonConvert.SerializeObject(create);
-                      //  MessageBox.Show("DEBUG   " + serializedFuncionario);
-                        var content = new StringContent(serializedFuncionario, Encoding.UTF8, "application/json");
-                      //  MessageBox.Show("DEBUG   " + content);
-                        var result = await client.PostAsync(URL, content);
-                      //  MessageBox.Show("DEBUG   " + result);
+                       var serializedFuncionario = JsonConvert.SerializeObject(create);
+                       MessageBox.Show("DEBUG   " + serializedFuncionario);
+                       var content = new StringContent(serializedFuncionario, Encoding.UTF8, "application/json");
+                       MessageBox.Show("DEBUG   " + content);
+                       var result = await client.PostAsync(URL, content);
+                       MessageBox.Show("DEBUG   " + result);
                     }
                 }
                 catch
@@ -538,7 +562,136 @@ namespace WindowsFormsApp1
             };
 
         }
-        
-       
+
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void GetAllUsers()
+        {
+            try { 
+            string URL = "http://localhost:3000/usuarios";
+
+            using (var client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(URL);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var usuarioJsonString = await response.Content.ReadAsStringAsync();
+
+
+                        JArray sizes = JArray.Parse(usuarioJsonString);
+                        dynamic data = JObject.Parse(sizes[0].ToString());
+                        // string data2 = (string)data["nome"];
+
+                        findId = sizes.ToString();
+
+                        for (int i = 0; i < sizes.Count(); i++)
+                        {
+                            string Text1 = sizes[i]["nome"].ToString();
+                            string Text2 = sizes[i]["id"].ToString();
+                            // comboBox2.ValueMember = Text2;
+                            comboBox2.Items.Add(Text2 + " " + Text1);
+                        }
+                }
+            }
+            }
+            catch(Exception e)
+            {
+                Debug debug = new Debug(e.ToString());
+                debug.Show();
+            }
+        }
+
+        private async void GetAllFunctions()
+        {
+            try
+            {
+                string URL = "http://localhost:3000/funcoes";
+
+                using (var client = new HttpClient())
+                {
+                    HttpResponseMessage response = await client.GetAsync(URL);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var usuarioJsonString = await response.Content.ReadAsStringAsync();
+
+
+                        JArray sizes = JArray.Parse(usuarioJsonString);
+                        dynamic data = JObject.Parse(sizes[0].ToString());
+                        // string data2 = (string)data["nome"];
+
+                        findId = sizes.ToString();
+
+                        for (int i = 0; i < sizes.Count(); i++)
+                        {
+                            string Text1 = sizes[i]["descricao"].ToString();
+                            string Text2 = sizes[i]["id"].ToString();
+                            // comboBox2.ValueMember = Text2;
+                            comboBox3.Items.Add(Text2 + " " + Text1);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Debug debug = new Debug(e.ToString());
+                debug.Show();
+            }
+        }
+
+        private void comboBox3_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private async void GetAllsetores()
+        {
+            try
+            {
+                string URL = "http://localhost:3000/setores";
+
+                using (var client = new HttpClient())
+                {
+                    HttpResponseMessage response = await client.GetAsync(URL);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var usuarioJsonString = await response.Content.ReadAsStringAsync();
+
+
+                        JArray sizes = JArray.Parse(usuarioJsonString);
+                        dynamic data = JObject.Parse(sizes[0].ToString());
+                        // string data2 = (string)data["nome"];
+
+                        findId = sizes.ToString();
+
+                        for (int i = 0; i < sizes.Count(); i++)
+                        {
+                            string Text1 = sizes[i]["descricao"].ToString();
+                            string Text2 = sizes[i]["id"].ToString();
+                            // comboBox2.ValueMember = Text2;
+                            comboBox4.Items.Add(Text2 + " " + Text1);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Debug debug = new Debug(e.ToString());
+                debug.Show();
+            }
+        }
+
+
     }
 }

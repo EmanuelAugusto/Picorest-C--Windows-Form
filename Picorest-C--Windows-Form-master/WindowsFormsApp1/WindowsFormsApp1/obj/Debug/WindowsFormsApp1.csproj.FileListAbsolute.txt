@@ -231,3 +231,37 @@ C:\Users\emanu\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\
 C:\Users\emanu\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.createFuncionarioCurso.resources
 C:\Users\emanu\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Editar.resources
 C:\Users\emanu\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Debug.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.exe.config
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.exe
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Picorest - Contatos.pdb
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AcessibilidadeDoTeclado.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarFuncionario.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarFunção.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarUsuario.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Ajuda.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.alterarPerfil.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Atualizacao.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.comentarioSistema.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Contatos.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarCursos.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.createFuncionarioCurso.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Debug.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.detalhar.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Editar.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ErroConexao.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.esqueciSenhaInto.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Login.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdicionarSetor.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Sobre.resources
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Picorest - Contatos.exe
+C:\Users\Erica Melo\Desktop\Picorest-C--Windows-Form\Picorest-C--Windows-Form-master\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Picorest - Contatos.pdb

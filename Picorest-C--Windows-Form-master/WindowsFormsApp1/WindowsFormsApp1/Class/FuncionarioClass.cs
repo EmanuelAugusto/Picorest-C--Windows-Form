@@ -66,12 +66,28 @@ namespace WindowsFormsApp1.Class
 
     public class createUsuario
     {
-        public int id { get; set; }
+        public string id { get; set; }
         public string nome { get; set; }
         public string email { get; set; }
         public string passWorld { get; set; }
         public string createdAt { get; set; }
         public string updatedAt { get; set; }
+    }
+
+    public class RootObject
+    {
+        public List<createUsuario> Users { get; set; }
+    }
+
+    public class ComboboxItem
+    {
+        public string Text { get; set; }
+        public string Value { get; set; }
+
+        public override string ToString()
+        {
+            return Text;
+        }
     }
 
     public class createFuncCurso

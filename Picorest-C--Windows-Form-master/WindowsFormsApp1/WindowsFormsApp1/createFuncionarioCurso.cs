@@ -11,6 +11,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using WindowsFormsApp1.Class;
+using Newtonsoft.Json.Linq;
 
 namespace WindowsFormsApp1
 {
@@ -18,6 +19,8 @@ namespace WindowsFormsApp1
     {
         public createFuncionarioCurso()
         {
+            GetAllFuncionarios();
+            GetAllCourses();
             InitializeComponent();
         }
 
@@ -56,6 +59,8 @@ namespace WindowsFormsApp1
             string CargaHoraria = textBox2.Text;
             string DataInicio = textBox3.Text;
             string DataConclusao = textBox4.Text;
+            string Funcionarioid = comboBox1.Text;
+            string FuncionarioCursoId = comboBox2.Text;
 
             if (Comprovante == "")
             {
@@ -84,8 +89,10 @@ namespace WindowsFormsApp1
                     create.cargaHoraria = CargaHoraria;
                     create.dataInicio = DataInicio;
                     create.dataConclusao = DataConclusao;
-                    create.funcionarioId = "17";
-                    create.cursoId = "5";
+                    string newIdfunction = Funcionarioid.Substring(0, 1);
+                    string newIdSector = FuncionarioCursoId.Substring(0, 1);
+                    create.funcionarioId = newIdfunction;
+                    create.cursoId = newIdSector;
 
                     using (var client = new HttpClient())
                     {
@@ -104,6 +111,92 @@ namespace WindowsFormsApp1
             }
         }
 
-       
+
+        private async void GetAllFuncionarios()
+        {
+            try
+            {
+                string URL = "http://localhost:3000/funcionarioCursos";
+
+                using (var client = new HttpClient())
+                {
+                    HttpResponseMessage response = await client.GetAsync(URL);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var usuarioJsonString = await response.Content.ReadAsStringAsync();
+
+
+                        JArray sizes = JArray.Parse(usuarioJsonString);
+                        dynamic data = JObject.Parse(sizes[0].ToString());
+                        // string data2 = (string)data["nome"];
+
+                      //  findId = sizes.ToString();
+
+                        for (int i = 0; i < sizes.Count(); i++)
+                        {
+                            string Text1 = sizes[i]["nome"].ToString();
+                            string Text2 = sizes[i]["id"].ToString();
+                            // comboBox2.ValueMember = Text2;
+                            comboBox1.Items.Add(Text2 + " " + Text1);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Debug debug = new Debug(e.ToString());
+                debug.Show();
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private async void GetAllCourses()
+        {
+            try
+            {
+                string URL = "http://localhost:3000/cursos";
+
+                using (var client = new HttpClient())
+                {
+                    HttpResponseMessage response = await client.GetAsync(URL);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var usuarioJsonString = await response.Content.ReadAsStringAsync();
+
+
+                        JArray sizes = JArray.Parse(usuarioJsonString);
+                        dynamic data = JObject.Parse(sizes[0].ToString());
+                        // string data2 = (string)data["nome"];
+
+                        //  findId = sizes.ToString();
+
+                        for (int i = 0; i < sizes.Count(); i++)
+                        {
+                            string Text1 = sizes[i]["descricao"].ToString();
+                            string Text2 = sizes[i]["id"].ToString();
+                            // comboBox2.ValueMember = Text2;
+                            comboBox2.Items.Add(Text2 + " " + Text1);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Debug debug = new Debug(e.ToString());
+                debug.Show();
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
