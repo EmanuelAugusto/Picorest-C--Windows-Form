@@ -65,7 +65,7 @@ namespace WindowsFormsApp1
         {
             string NomeCurso = textBox3.Text;
             string CargaHoraria = textBox2.Text;
-            string Certificado = textBox4.Text;
+        //    string Certificado = textBox4.Text;
             string DataIncio = maskedTextBox1.Text;
             string DataConclusao = maskedTextBox2.Text;
 
@@ -77,10 +77,10 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("O campo Carga horária é obrigatório");
             }
-            if (Certificado == "")
-            {
-                MessageBox.Show("O campo Certificado é obrigatório");
-            }
+           // if (Certificado == "")
+           // {
+           //     MessageBox.Show("O campo Certificado é obrigatório");
+           // }
             if (DataIncio == "")
             {
                 MessageBox.Show("O campo Data início é obrigatório");
@@ -89,6 +89,10 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("O campo Data conclusão é obrigatório");
             }
+
+
+
+
 
         }
 

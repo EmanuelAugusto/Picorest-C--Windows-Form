@@ -90,6 +90,15 @@ namespace WindowsFormsApp1.Class
         }
     }
 
+    public class createCurso
+    {
+        public int id { get; set; }
+        public string descricao { get; set; }
+        public string cargaHoraria { get; set; }
+        public string dataInicio { get; set; }
+        public string dataConclusao { get; set; }
+    }
+
     public class createFuncCurso
     {
         public int id { get; set; }
