@@ -38,7 +38,7 @@ namespace WindowsFormsApp1
                         if (response.IsSuccessStatusCode)
                         {
                             var FuncionarioJsonString = await response.Content.ReadAsStringAsync();
-                           // MessageBox.Show("DEBUG   " + await response.Content.ReadAsStringAsync());
+                          //  MessageBox.Show("DEBUG   " + await response.Content.ReadAsStringAsync());
 
                             JArray sizes = JArray.Parse(FuncionarioJsonString);
                             dynamic data = JObject.Parse(sizes[0].ToString());
@@ -47,6 +47,10 @@ namespace WindowsFormsApp1
                             string data2 = (string)data["ctps"];
                             string data3 = (string)data["admissao"];
                             string data4 = (string)data["demissao"];
+                            if(data4 == null)
+                            {
+                                data4 = "Funcionário Ativo";
+                            }
                             string data5 = (string)data["sexo"];
                             string data6 = (string)data["numero"];
                             string data7 = (string)data["logradouro"];

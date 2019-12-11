@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
+using WindowsFormsApp1.Class;
+using Newtonsoft.Json.Linq;
 
 namespace WindowsFormsApp1
 {
@@ -100,5 +105,63 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private async void insert()
+        {
+
+            string NomeCurso = textBox3.Text;
+            string CargaHoraria = textBox2.Text;
+            //    string Certificado = textBox4.Text;
+            string DataIncio = maskedTextBox1.Text;
+            string DataConclusao = maskedTextBox2.Text;
+
+
+            createCurso create = new createCurso();
+            create.descricao = NomeCurso;
+            create.cargaHoraria = CargaHoraria;
+            create.dataInicio = DataIncio;
+            create.dataConclusao = DataConclusao;
+
+
+
+                try
+                {
+
+                    string URL = "http://localhost:3000/cursos";
+
+                    using (var client = new HttpClient())
+                    {
+                        var serializedFuncionario = JsonConvert.SerializeObject(create);
+                        //MessageBox.Show("DEBUG   " + serializedFuncionario);
+                        var content = new StringContent(serializedFuncionario, Encoding.UTF8, "application/json");
+                        //MessageBox.Show("DEBUG   " + content);
+                        var result = await client.PostAsync(URL, content);
+                        // MessageBox.Show("DEBUG   " + result);
+
+                        if (result.IsSuccessStatusCode)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Curso Cadastrado com sucesso", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Question);
+
+                            if (dialogResult == DialogResult.OK)
+                            {
+                                this.Close();
+
+
+                            }
+                        }
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Erro de conexão com o servidor", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+
+            }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            insert();
+        }
     }
-}
+    }

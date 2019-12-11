@@ -67,7 +67,7 @@ namespace WindowsFormsApp1
         private void button5_Click(object sender, EventArgs e)
         {
             
-            var adicionarusuario = new AdicionarUsuario();
+            var adicionarusuario = new AdicionarUsuario(decide);
             adicionarusuario.Closed += (s, args) => this.Close();
             adicionarusuario.Show();
         }

@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
         public Login()
         {
             InitializeComponent();
-            loginLoad();
+           // loginLoad();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,14 +30,7 @@ namespace WindowsFormsApp1
             string username = textBox1.Text;
             string password = textBox2.Text;
 
-            if (username == "picorest@gmail.com" && password == "123123")
-            {
-                this.Hide();
-                var form1 = new Form1();
-                form1.Closed += (s, args) => this.Close();
-                form1.Show();
-            }
-            else if (!username.Contains("@"))
+            if (!username.Contains("@"))
             {
                 MessageBox.Show("Digite um e-mail válido", "Aviso");
                 textBox1.Focus();
@@ -49,8 +42,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("Usuário ou senha incorreta", "Aviso");
-                textBox1.Focus();
+                loginLoad();
             }
 
         }
@@ -89,18 +81,6 @@ namespace WindowsFormsApp1
         {
             try
             {
-                string URL = "http://localhost:3000/";
-
-                using (var client = new HttpClient())
-                {
-                    using (var response = await client.GetAsync(URL))
-                    {
-                        if (response.IsSuccessStatusCode)
-                        {
-                           
-                        }
-                    }
-                }
 
                 string URL2 = "http://localhost:3000/usuarios";
 
@@ -112,17 +92,33 @@ namespace WindowsFormsApp1
                     {
                         var logins = await response2.Content.ReadAsStringAsync();
 
-                        MessageBox.Show("DEBUG  " + logins);
+                        //MessageBox.Show("DEBUG  " + logins);
 
-                        /*JArray sizes = JArray.Parse(logins);
+                        JArray sizes = JArray.Parse(logins);
                         dynamic data = JObject.Parse(sizes[0].ToString());
 
-                        for(var i = 0; i < data.length; i++)
+                        int a = 0;
+
+                            for (int i = 0; i < sizes.Count(); i++)
+                            {
+                                if (sizes[i]["email"].ToString() == textBox1.Text && sizes[i]["passWorld"].ToString() == textBox2.Text)
+                                {
+
+                                
+                                //MessageBox.Show(sizes.Count().ToString());
+                                loadForm1(1, sizes[i]["nome"].ToString());
+
+                                }
+                                else
+                                {
+                                a += 1;
+
+                                }
+                            }
+                        if (a == sizes.Count() )
                         {
-                            data = (string)data["nome"][i];
-                            
+                             MessageBox.Show("AVISO", "E-mail ou senha incorretos");
                         }
-                        MessageBox.Show("DEBUG" + data);*/
                     }
                 }
             }
@@ -141,7 +137,22 @@ namespace WindowsFormsApp1
         {
             string URL = "http:localhost:3000/authUser";
 
+        }
 
+        private void loadForm1(int num, string nome)
+        {
+            if (num == 1)
+            {
+                MessageBox.Show("SUCESSO", "Login Efetuado com sucesso");
+                this.Hide();
+                var form1 = new Form1(nome);
+                form1.Closed += (s, args) => this.Close();
+                form1.Show();
+            }
+            else
+            {
+                MessageBox.Show("AVISO", "E-mail ou senha incorretos");
+            }
         }
     }
 }

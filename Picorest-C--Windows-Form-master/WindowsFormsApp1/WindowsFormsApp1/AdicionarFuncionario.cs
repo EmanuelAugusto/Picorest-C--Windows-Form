@@ -41,6 +41,7 @@ namespace WindowsFormsApp1
             {
                 this.Text = "Atualizar Funcionário";
                 GetEmployeesId(decide);
+                button1.Text = "Atualizar Funcionario";
 
             }
             else
@@ -304,9 +305,9 @@ namespace WindowsFormsApp1
             string Usuario = comboBox2.Text;
             string Funcao = comboBox3.Text;
             string Setor = comboBox4.Text;
-            string newIdUSer = Usuario.Substring(0, 1);
-            string newIdfunction = Funcao.Substring(0, 1);
-            string newIdSector = Setor.Substring(0, 1);
+            string newIdUSer = Usuario.Substring(0, 2);
+            string newIdfunction = Funcao.Substring(0, 2);
+            string newIdSector = Setor.Substring(0, 2);
            // Debug debug = new Debug(newIdUSer.ToString());
            // debug.Show();
 
@@ -437,6 +438,12 @@ namespace WindowsFormsApp1
                         string data10 = (string)data["bairro"];
                         string data11 = (string)data["cidade"];
                         string data12 = (string)data["uf"];
+                        string data13 = (string)data["id"];
+                        string data14 = (string)data["nome"];
+                        string data15 = (string)data["setorId"];
+                        string data16 = (string)data["setorNome"];
+                        string data17 = (string)data["funcaoId"];
+                        string data18 = (string)data["funcaoNome"];
 
                         textBox10.Text = data2;
                         maskedTextBox1.Text = data3;
@@ -449,6 +456,9 @@ namespace WindowsFormsApp1
                         textBox18.Text = data10;
                         textBox19.Text = data11;
                         textBox2.Text = data12;
+                        comboBox2.Text = data13 + "    " + data14;
+                        comboBox3.Text = data15 + "    " + data16;
+                        comboBox4.Text = data17 + "    " + data18;
 
 
                         var json = JsonConvert.DeserializeObject<funcionarioFiltrado[]>(FuncionarioJsonString);
@@ -484,6 +494,12 @@ namespace WindowsFormsApp1
             string Bairro = textBox18.Text;
             string Cidade = textBox18.Text;
             string Uf = textBox2.Text;
+            string Usuario = comboBox2.Text;
+            string Funcao = comboBox3.Text;
+            string Setor = comboBox4.Text;
+            string newIdUSer = Usuario.Substring(0, 2);
+            string newIdfunction = Funcao.Substring(0, 2);
+            string newIdSector = Setor.Substring(0, 2);
 
             if (Matricula == "")
             {
@@ -544,9 +560,9 @@ namespace WindowsFormsApp1
                     update.bairro = Bairro;
                     update.cidade = Cidade;
                     update.uf = Uf;
-                    update.usuarioId = "5";
-                    update.setorId = "5";
-                    update.funcaoId = "5";
+                    update.usuarioId = newIdUSer;
+                    update.setorId = newIdSector;
+                    update.funcaoId = newIdfunction;
 
 
 
@@ -605,7 +621,7 @@ namespace WindowsFormsApp1
                             string Text1 = sizes[i]["nome"].ToString();
                             string Text2 = sizes[i]["id"].ToString();
                             // comboBox2.ValueMember = Text2;
-                            comboBox2.Items.Add(Text2 + " " + Text1);
+                            comboBox2.Items.Add(Text2 + "   " + Text1);
                         }
                 }
             }
