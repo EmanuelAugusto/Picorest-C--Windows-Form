@@ -107,6 +107,7 @@ namespace WindowsFormsApp1
                                 
                                 //MessageBox.Show(sizes.Count().ToString());
                                 loadForm1(1, sizes[i]["nome"].ToString());
+                                break;
 
                                 }
                                 else
@@ -117,7 +118,7 @@ namespace WindowsFormsApp1
                             }
                         if (a == sizes.Count() )
                         {
-                             MessageBox.Show("AVISO", "E-mail ou senha incorretos");
+                             MessageBox.Show("E-mail ou senha incorretos", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
@@ -143,7 +144,7 @@ namespace WindowsFormsApp1
         {
             if (num == 1)
             {
-                MessageBox.Show("SUCESSO", "Login Efetuado com sucesso");
+                MessageBox.Show("Login efetuado com sucesso", "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
                 var form1 = new Form1(nome);
                 form1.Closed += (s, args) => this.Close();
@@ -151,7 +152,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("AVISO", "E-mail ou senha incorretos");
+                MessageBox.Show("E-mail ou senha incorretos", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

@@ -112,7 +112,7 @@ namespace WindowsFormsApp1
             string Nome = textBox1.Text;
             string Email = textBox2.Text;
             string Senha = textBox3.Text;
-
+            string SenhaConfirmada = textBox4.Text;
             if(Nome == "")
             {
                 MessageBox.Show("O campo nome é obrigatório", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -130,44 +130,56 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("O campo Senha é obrigatório", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            string URL = "http://localhost:3000/usuarios";
-
-            try
+            if (Senha.Length < 6)
             {
-                createUsuario create = new createUsuario();
-                create.nome = Nome;
-                create.email = Email;
-                create.passWorld = Senha;
+                MessageBox.Show("O campo Senha deve ter mais de 6 dígitos", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
-                using (var client = new HttpClient())
+            if(Senha != SenhaConfirmada)
+            {
+                MessageBox.Show("As senhas não conferem", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+
+                string URL = "http://localhost:3000/usuarios";
+
+                try
                 {
-                    var serializedUsuario = JsonConvert.SerializeObject(create);
-                    //MessageBox.Show("DEBUG   " + serializedUsuario);
-                    var content = new StringContent(serializedUsuario, Encoding.UTF8, "application/json");
-                    //MessageBox.Show("DEBUG   " + content);
-                    var result = await client.PostAsync(URL, content);
-                    //MessageBox.Show("DEBUG   " + result);
+                    createUsuario create = new createUsuario();
+                    create.nome = Nome;
+                    create.email = Email;
+                    create.passWorld = Senha;
 
-                    if (result.IsSuccessStatusCode)
+                    using (var client = new HttpClient())
                     {
-                        DialogResult dialogResult = MessageBox.Show("Usuário Cadastrado com sucesso", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                        var serializedUsuario = JsonConvert.SerializeObject(create);
+                        //MessageBox.Show("DEBUG   " + serializedUsuario);
+                        var content = new StringContent(serializedUsuario, Encoding.UTF8, "application/json");
+                        //MessageBox.Show("DEBUG   " + content);
+                        var result = await client.PostAsync(URL, content);
+                        //MessageBox.Show("DEBUG   " + result);
 
-                        if (dialogResult == DialogResult.OK)
+                        if (result.IsSuccessStatusCode)
                         {
-                            this.Close();
+                            DialogResult dialogResult = MessageBox.Show("Usuário Cadastrado com sucesso", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Question);
 
+                            if (dialogResult == DialogResult.OK)
+                            {
+                                this.Close();
+
+                            }
                         }
                     }
-                }
 
-            }
-            catch
-            {
-                this.Hide();
-                var erro = new ErroConexao();
-                erro.Closed += (s, args) => this.Close();
-                erro.Show();
+                }
+                catch
+                {
+                    this.Hide();
+                    var erro = new ErroConexao();
+                    erro.Closed += (s, args) => this.Close();
+                    erro.Show();
+                }
             }
 
 
@@ -303,6 +315,11 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Erro de conexão com o servidor", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

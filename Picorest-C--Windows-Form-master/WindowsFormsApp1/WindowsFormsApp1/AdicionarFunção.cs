@@ -97,11 +97,11 @@ namespace WindowsFormsApp1
                 using (var client = new HttpClient())
                 {
                     var serializedFuncao = JsonConvert.SerializeObject(create);
-                    MessageBox.Show("DEBUG   " + serializedFuncao);
+                   // MessageBox.Show("DEBUG   " + serializedFuncao);
                     var content = new StringContent(serializedFuncao, Encoding.UTF8, "application/json");
-                    MessageBox.Show("DEBUG   " + content);
+                   // MessageBox.Show("DEBUG   " + content);
                     var result = await client.PostAsync(URL, content);
-                    MessageBox.Show("DEBUG   " + result);
+                   // MessageBox.Show("DEBUG   " + result);
                 }
             }
             catch

@@ -77,9 +77,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label2.Location = new System.Drawing.Point(32, 234);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 17);
+            this.label2.Size = new System.Drawing.Size(47, 17);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Nome de Usuário";
+            this.label2.Text = "E-mail";
             // 
             // button1
             // 
@@ -146,18 +146,18 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.AliceBlue;
             this.label4.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(122, 85);
+            this.label4.Location = new System.Drawing.Point(28, 43);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(192, 42);
+            this.label4.Size = new System.Drawing.Size(411, 84);
             this.label4.TabIndex = 6;
-            this.label4.Text = "PICOREST";
+            this.label4.Text = "Sistema de Formação \r\n          Continuada\r\n";
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.Navy;
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(484, 561);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.linkLabel1);
