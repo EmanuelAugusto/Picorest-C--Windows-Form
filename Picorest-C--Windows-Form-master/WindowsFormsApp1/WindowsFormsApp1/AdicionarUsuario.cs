@@ -29,6 +29,7 @@ namespace WindowsFormsApp1
                 this.Text = "Atualizar Usuário";
                 GetUserId(decide);
                 button1.Text = "Atualizar Usuário";
+                label1.Text = "Atualizar Usuário";
                 GetEmployeesId(decide);
 
             }
@@ -307,6 +308,10 @@ namespace WindowsFormsApp1
                         //  var home = new Form1();
                         //  home.Closed += (s, args) => this.Close();
                         //  home.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("DEBUG" + responseMessage.ToString());
                     }
                 }
             }
