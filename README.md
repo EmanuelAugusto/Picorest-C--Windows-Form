@@ -42,12 +42,12 @@ Se quise acessar o codigo fonte do projeto abra-o no Visual Studio, ou senão ac
 - Se você abriu no Visual Studio Aperte Ctrl + F5 e projeto rodará.
 
 # catch(Exception e){
-  	
-	Por conta de tempo abil publicamos uma versão da api no heroku mas, era uma versão instavel, e quanto publicação das interfaces futuras atualizações virão.
 
-	Dúvidas?
-		envie um email para: emanoel.santos@a.ficr.edu.br
+Por conta de tempo abil publicamos uma versão da api no heroku mas, era uma versão instavel, e quanto publicação das interfaces futuras atualizações virão.
 
-#}
+Dúvidas?
+	envie um email para: emanoel.santos@a.ficr.edu.br
+
+# }
 
 ### Projeto Desenvolvido no 2º Período do Curso de Análise e Desenvolvimento de Sistemas e Sistemas para Internet, na Faculdade Católica Imaculada Conceição do Recife.
